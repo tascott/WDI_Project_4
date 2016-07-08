@@ -1,0 +1,22 @@
+<md-content flex id="content" ng-controller='EventsController as events'>
+
+  <section layout="column" flex="60" flex-offset="20">
+  <h2 class="md-display-3">Add Event</h2>
+  <md-divider></md-divider>
+
+    <form id="register" name="users.registerForm" ng-submit="events.addEvent()" class="md-whiteframe-15dp" novalidate>
+
+    <md-input-container class="md-icon-float md-block">   
+      <input type="text" placeholder="Event title" ng-model="events.newEvent.title">
+     
+    </md-input-container>
+
+    <md-input-container class="md-icon-float md-block">   
+      <input type="text" placeholder="Event location" ng-model="events.newEvent.location">
+    </md-input-container>
+
+    <md-button type="submit" class="md-raised">Submit</md-button>
+
+    </form>
+  </section>
+</md-content>

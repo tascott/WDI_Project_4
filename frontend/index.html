@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="mymoments">
+<head>
+  <title>Angular Authentication</title>
+  <!-- External Files -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+  <script type="text/javascript" src="https://cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-resource.min.js"></script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.9/angular-material.min.js"></script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+
+  <!-- Internal Files -->
+  <script src="./js/app.js"></script>
+  <script type="text/javascript" src="js/services/authInterceptor.js"></script>
+  <script type="text/javascript" src="js/services/tokenService.js"></script>
+  <script src="./js/models/user.js"></script>
+  <script src="./js/models/event.js"></script>
+  <script src="./js/controllers/usersController.js"></script>
+  <script src="./js/controllers/eventsController.js"></script>
+  <script type="text/javascript" src="js/services/currentUser.js"></script>
+
+  <!-- Stylesheets -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600" rel="stylesheet">
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+ 
+
+</head>
+<body ng-controller="UsersController as users" layout="column" md-theme="teal">
+<header>
+<md-toolbar layout="row" layout-padding class="bg-dark-blue nav-dark" layout-align="end start">
+<div >
+      <md-button class="md-raised" ui-sref="#" ng-show="users.checkLoggedIn()">Hello, {{users.currentUser.local.name}}!</md-button>
+      <md-button class="md-raised" ui-sref="events" ng-show="users.checkLoggedIn()">Events</md-button>
+      <md-button class="md-raised" ui-sref="new-event" ng-show="users.checkLoggedIn()">Add event</md-button>
+      <md-button class="md-raised" ui-sref="users" ng-show="users.checkLoggedIn()">Users</md-button>
+      <md-button class="md-raised" ui-sref="login" ng-hide="users.checkLoggedIn()">Login</md-button>
+      <md-button class="md-raised" ui-sref="register" ng-hide="users.checkLoggedIn()">Register</md-button>
+      <md-button class="md-raised" ui-sref="home" ng-click="users.logout()" ng-show="users.checkLoggedIn()">Logout</md-button>
+</div>
+</md-toolbar>
+</header>
+
+  <main class="container" ui-view></main>
+
+</body>
+</html>

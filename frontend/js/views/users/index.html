@@ -1,0 +1,19 @@
+
+<section layout="column" flex="60" flex-offset="20">
+<h2 class="md-display-3">Users Index</h2>
+<md-divider></md-divider>
+  <div id="users">
+    <ul class="md-whiteframe-15dp">
+      <li ng-repeat="user in users.all track by $index" class='user-tile'>
+        <h2>{{user.local.name}}</h2> 
+        <p>{{user.local.username}}</p>
+        <p>{{user.local.email}}</p>
+        <button ng-click="users.showUser(user)">Show</button> 
+        <a href='#' ng-click="users.deleteUser(user)">Delete</a> 
+        <a href='#' ng-click="users.editUser(user)" >Edit</a>
+
+      </li>
+    </ul>
+  </div>
+
+</section>
