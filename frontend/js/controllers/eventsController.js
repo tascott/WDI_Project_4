@@ -1,60 +1,36 @@
 angular
-  .module('mymoments')
-  .controller('EventsController', EventsController);
+.module('myMoments')
+.controller('EventsController', EventsController);
 
-EventsController.$inject = ['Event', '$state', '$location'];
+EventsController.$inject = ['Event', '$scope', '$http', 'CurrentUser', '$stateParams', '$state'];
+function EventsController(Event, $scope, $http, CurrentUser, $stateParams, $state){
 
-function EventsController(Event, $state, $location){
+  var self            = this;
 
-  var self = this;
-  self.newEvent = null;
-  self.all = null;
-  this.getEvents = getEvents;
+  self.events         = [];
+  self.event          = {};
+  self.selectedEvent  = {};
 
-getEvents();
+  self.createEvent    = createEvent;
+  self.removeEvent    = removeEvent;
 
-function getEvents(){
-  Event.query(function(data){
-    console.log(data[9])
-    self.all = data;
+  function createEvent(){
+   self.currentUser  = CurrentUser.getUser();
+   self.event.user   = self.currentUser._id;
+   console.log(self.event)
+   $http.post("http://localhost:3000/api/events/" , {event: self.event}, function(data) {
+     console.log("success");
+   });
+ }
+
+ function removeEvent(event){
+  $http
+  .delete('http://localhost:3000/events/' + event._id)
+  .then(function(response){
+    var user = $scope.$parent.users.user;
+    var index = self.events.indexOf(event);
+    user.events.splice(index, 1);
   });
-
 }
-
-this.addEvent = function(){
-    console.log("adding event" + self.all)
-    Event.save(self.newEvent, function(response){
-      console.log("YOOO" + response)
-      console.log(response)
-      console.log(self.newEvent)
-        self.all.push(self.newEvent);
-        self.newProject = {}
-    });
-
-    
-  }
-
-  this.showEvent = function(event) {
-    this.eventShow = event;
-  }
-
-  function editEvent(event){
-      self.editedEvent = event;  
-  }
-
-  function updateEvent(){
-    index = self.all.indexOf(self.editedProject)
-    $http.put('http://localhost:3000/events/' + self.editedEvent._id, {project: this.editedEvent}).then(function(response){
-      self.all[index] = self.editedEvent;
-    })
-    }
-
-    function deleteProject(event){
-          $http.delete('http://localhost:3000/events/' + event._id).then(function(response){
-            index = self.all.indexOf(event)
-            self.all.splice(index, 1)
-          })
-      }
-
 
 }

@@ -1,23 +1,19 @@
 angular
-  .module('mymoments', ['angular-jwt', 'ngResource', 'ui.router', 'ngMaterial'])
-  .constant('API', 'http://localhost:3000')
+  .module('myMoments', ['ngResource', 'angular-jwt', 'ui.router', 'ngFileUpload', 'flow'])
+  .constant('API', 'http://localhost:3000/api')
   .config(MainRouter)
-  .config(function($httpProvider) {
+  .config(function($httpProvider){
     $httpProvider.interceptors.push('authInterceptor');
-  })
-  .config(function($mdThemingProvider) {
-    $mdThemingProvider.theme('teal')
-      .primaryPalette('indigo')
-      .accentPalette('yellow');
   });
 
-MainRouter.$inject = ['$stateProvider', '$urlRouterProvider'];
+MainRouter.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
+function MainRouter($stateProvider, $urlRouterProvider, $locationProvider) {
+  // $locationProvider.html5Mode(true);
 
-function MainRouter($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
       url: "/",
-      templateUrl: "./js/views/authentications/login.html"
+      templateUrl: "./js/views/home.html"
     })
     .state('login', {
       url: "/login",
@@ -33,16 +29,19 @@ function MainRouter($stateProvider, $urlRouterProvider) {
     })
     .state('user', {
       url: "/users/:id",
-      templateUrl: "./js/views/users/show-user.html"
+      templateUrl: "./js/views/users/show.html",
+      controller: "UsersController as profile"
+      // controller: function($scope, $stateParams, User) {
+      //   User.get({ id: $stateParams.id }, function(res){
+      //     $scope.$parent.users.user = res.user;
+      //   });
+      // }
     })
-    .state('events', {
-      url: "/events",
-      templateUrl: "./js/views/events/index.html"
-    })
-    .state('new-event', {
-      url: "/events/new",
-      templateUrl: "./js/views/events/new-event.html"
-    })
+    .state('event', {
+      url: "/events/:id",
+      templateUrl: "./js/views/events/event.html",
+      controller: "EventsShowController as events",
+    });
 
   $urlRouterProvider.otherwise("/");
 }

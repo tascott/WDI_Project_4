@@ -1,23 +1,23 @@
 angular
-  .module('mymoments')
+  .module('myMoments')
   .factory('User', User);
 
-User.$inject = ['$resource'];
-function User($resource){
+User.$inject = ['$resource', 'API'];
+function User($resource, API){
 
   return $resource(
-    'http://localhost:3000/users/:id', {id: '@id'},
+    API+'/users/:id', {id: '@id'},
     { 'get':       { method: 'GET' },
       'save':      { method: 'POST' },
-      'query':     { method: 'GET', isArray: true},
+      'query':     { method: 'GET', isArray: false},
       'remove':    { method: 'DELETE' },
       'delete':    { method: 'DELETE' },
       'register': {
-        url: 'http://localhost:3000/register',
+        url: API +'/register',
         method: "POST"
       },
       'login':      {
-        url:'http://localhost:3000/login',
+        url: API + '/login',
         method: "POST"
       }
     }

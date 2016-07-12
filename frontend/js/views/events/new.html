@@ -1,0 +1,17 @@
+<h2>New Event</h2>
+
+<form id="new-event" ng-submit="events.createEvent()">
+  <input type="text" name='title' id="event-title" placeholder="Title" ng-model="events.event.title">
+
+  <input type="text" name='description' id="event-description" placeholder="Description" ng-model="events.event.description">
+
+  <input type="text" name='location' id="event-location" placeholder="Location" ng-model="events.event.location">
+
+  <input type="text" name='bgcolor' id="event-bgcolor" placeholder="Background Color" ng-model="events.event.bgcolor">
+
+  <input type="text" name='scndcolor' id="event-scndcolor" placeholder="Second color" ng-model="events.event.scndcolor">
+
+  <input type="text" name='layout' id="event-layout" placeholder="Layout" ng-model="events.event.layout">
+
+  <input type="submit" value='Save' id="submit">
+</form>

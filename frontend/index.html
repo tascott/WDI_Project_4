@@ -1,51 +1,108 @@
 <!DOCTYPE html>
-<html ng-app="mymoments">
+<html ng-app="myMoments">
 <head>
   <title>Angular Authentication</title>
+  <base href="/" />
+  
   <!-- External Files -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-messages.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
   <script type="text/javascript" src="https://cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-resource.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-resource.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.9/angular-material.min.js"></script>
-
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
 
   <!-- Internal Files -->
   <script src="./js/app.js"></script>
-  <script type="text/javascript" src="js/services/authInterceptor.js"></script>
-  <script type="text/javascript" src="js/services/tokenService.js"></script>
+  <script src="./js/services/tokenService.js"></script>
+  <script src="./js/services/authInterceptor.js"></script>
+  <script src="./js/services/currentUser.js"></script>
   <script src="./js/models/user.js"></script>
   <script src="./js/models/event.js"></script>
+  <script src="./js/models/comment.js"></script>
   <script src="./js/controllers/usersController.js"></script>
   <script src="./js/controllers/eventsController.js"></script>
-  <script type="text/javascript" src="js/services/currentUser.js"></script>
+  <script src="./js/controllers/eventsShowController.js"></script>
+  <script src="./js/controllers/commentsController.js"></script>
+  <script src="./js/controllers/commentsShowController.js"></script>
+  <script src="./js/controllers/themesController.js"></script>
+  <script src="./js/controllers/fileUploadController.js"></script>
+  <script src="./bower_components/ng-file-upload/ng-file-upload.js"></script>
+  <script src="./bower_components/ng-flow/dist/ng-flow-standalone.js"></script>
 
   <!-- Stylesheets -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600" rel="stylesheet">
-  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
-  <link rel="stylesheet" type="text/css" href="css/reset.css">
   <link rel="stylesheet" type="text/css" href="./css/style.css">
- 
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  
 </head>
-<body ng-controller="UsersController as users" layout="column" md-theme="teal">
-<header>
-<md-toolbar layout="row" layout-padding class="bg-dark-blue nav-dark" layout-align="end start">
-<div >
-      <md-button class="md-raised" ui-sref="#" ng-show="users.checkLoggedIn()">Hello, {{users.currentUser.local.name}}!</md-button>
-      <md-button class="md-raised" ui-sref="events" ng-show="users.checkLoggedIn()">Events</md-button>
-      <md-button class="md-raised" ui-sref="new-event" ng-show="users.checkLoggedIn()">Add event</md-button>
-      <md-button class="md-raised" ui-sref="users" ng-show="users.checkLoggedIn()">Users</md-button>
-      <md-button class="md-raised" ui-sref="login" ng-hide="users.checkLoggedIn()">Login</md-button>
-      <md-button class="md-raised" ui-sref="register" ng-hide="users.checkLoggedIn()">Register</md-button>
-      <md-button class="md-raised" ui-sref="home" ng-click="users.logout()" ng-show="users.checkLoggedIn()">Logout</md-button>
-</div>
-</md-toolbar>
-</header>
+<body ng-controller="UsersController as users">
+  <header>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#" ui-sref-active="active" ui-sref="home">Angular Authentication</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li ng-show="users.checkLoggedIn()">
+              <a href="#" ui-sref="users">Users</a>
+            </li>
+            <li ng-show="users.checkLoggedIn()">
+              <a href="#" ui-sref="user({ id: users.currentUser._id })">Profile</a>
+            </li>
+            <li ng-hide="users.checkLoggedIn()">
+              <a href="#" ui-sref="login">Login</a>
+            </li>
+            <li ng-hide="users.checkLoggedIn()">
+              <a href="#" ui-sref="register">Register</a>
+            </li>
+            <li ng-show="users.checkLoggedIn()">
+              <a href="#"ui-sref="home" ng-click="users.logout()">Logout</a>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </header>
+
+
+
+
+
+
+
+
+
+<!-- 
+   <div ng-controller="fileUploadController">
+    <h4>Upload on file select</h4>
+    <button type="file" ngf-select="uploadFiles($file, $invalidFiles)"
+            accept="image/*" ngf-max-height="1000" ngf-max-size="1MB">
+        Select File</button>
+    <br><br>
+    File:
+    <div style="font:smaller">{{f.name}} {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}}
+        <span class="progress" ng-show="f.progress >= 0">
+            <div style="width:{{f.progress}}%"  
+                 ng-bind="f.progress + '%'"></div>
+        </span>
+    </div>
+    <img src="f.path">   
+    {{errorMsg}}
+    </div> -->
+
+
 
   <main class="container" ui-view></main>
 

@@ -1,0 +1,60 @@
+<section ng-controller="EventsController as events">
+  <div class="row">
+    <div class="col-sm-6 col-md-4">
+      <div class="caption">
+        <br>
+        <h4>My Events</h4>
+        <ul>
+          <li ng-repeat="event in profile.user.events">
+            <h6>Title: {{ event.title }}</h6>
+            <p>Description: {{ event.description }}</p>
+            <p>Comments: {{ event.comments }}</p>
+            <a ui-sref="event({ id: event._id })">Show</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- <div ng-controller="ThemeController as theme">
+
+
+  <label>Show Images</label>
+  <input type="checkbox" ng-model="theme.theme.show_images">
+
+
+  <select ng-model="theme.event.style">
+    <option ng-repeat="style in theme.styles" value="{{style}}">{{style}}</option>
+  </select>
+
+  <input type="button" value="Save" ng-click="theme.save()">
+
+  <div id="wrapper" ng-class="theme.event.style">
+
+      <h1>Theme</h1>
+
+      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+
+      <ul>
+        <li>sdfgdsgs</li>
+        <li>sdfasdfasd</li>
+      </ul>
+
+      <div id="images" ng-show="theme.theme.show_images">
+          <h2>Images</h2>
+
+      </div>
+
+  </div>
+</div> -->
+
+
+

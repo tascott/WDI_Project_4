@@ -1,80 +1,84 @@
 angular
-.module('mymoments')
-.controller('UsersController', UsersController);
+  .module('myMoments')
+  .controller('UsersController', UsersController);
 
-UsersController.$inject = ['User', 'TokenService', 'CurrentUser', '$state', '$location'];
-function UsersController(User, TokenService, CurrentUser, $state, $location){
+UsersController.$inject = ['User', 'TokenService', '$state', 'CurrentUser', '$stateParams'];
+function UsersController(User, TokenService, $state, CurrentUser, $stateParams){
 
   var self = this;
 
+  if ($stateParams.id) {
+    User.get({ id: $stateParams.id }, function(res) {
+      self.user = res.user;
+    });
+  }
+
+  
   self.all           = [];
   self.user          = null;
   self.currentUser   = null;
-  // self.selectedUser  = {local: {email: "pete@test.com"}}
-  self.selectedUser  = null;
   self.error         = null;
   self.getUsers      = getUsers;
   self.register      = register;
   self.login         = login;
   self.logout        = logout;
   self.checkLoggedIn = checkLoggedIn;
-  self.showUser      = showUser;
-
+  self.showEvent     = showEvent;
+  self.test          = "controller";
+  self.selectedEvent = null;
 
   function getUsers() {
     User.query(function(data){
-      self.all = data;
+      self.all = data.users;
     });
   }
 
   function handleLogin(res) {
-   var token = res.token ? res.token : null;
-   if (token) {
-     self.getUsers();
-     $state.go('events');
-   }
-   self.currentUser = CurrentUser.getUser();
- }
- function handleError(e) {
-  self.error = "Something went wrong.";
-}
+    var token = res.token ? res.token : null;
+    if (token) {
+      self.currentUser = CurrentUser.getUser();
+      self.getUsers();
+      $state.go('home');
+    }
+  }
 
-function register() {
-  User.register(self.user, handleLogin, handleError);
-}
+  function showEvent(event){
+    console.log("in the function")
+    self.selectedEvent = event; 
+    console.log(self.selectedEvent);
+    $state.go('event');
+  }
 
-function login() {
-  User.login(self.user, handleLogin, handleError);
-}
+  function handleError(e) {
+    self.error = "Something went wrong.";
+  }
 
-function logout() {
-  self.all         = [];
-  self.currentUser = null;
-  CurrentUser.clearUser();
-}
+  function register() {
+    self.error = null;
+    User.register(self.user, handleLogin, handleError);
+  }
 
-function checkLoggedIn() {
- self.currentUser = CurrentUser.getUser();
- return !!self.currentUser;
-}
+  function login() {
+    self.error = null;
+    User.login(self.user, handleLogin, handleError);
+  }
 
-function showUser(user) {
-  self.selectedUser = user;
-  console.log("oooo")
-  console.log(self.selectedUser);
-  $state.go('user');
-}
+  function logout() {
+    self.all         = [];
+    self.currentUser = null;
+    self.user        = null;
+    CurrentUser.clearUser();
+    $state.go("home");
+  }
 
-this.displayUser = function() {
-  console.log(self.selectedUser)
-}
+  function checkLoggedIn() {
+    self.currentUser = CurrentUser.getUser();
+    return !!self.currentUser;
+  }
 
+  if (checkLoggedIn()) {
+    self.getUsers();
+  }
 
-
-
-if (checkLoggedIn()) {
-  self.getUsers();
-}
-
-return self;
+  return self;
 }

@@ -1,13 +1,88 @@
-html {
-  font-family: 'Source Sans Pro', sans-serif;
+.media-object {
+  max-width: 60px;
 }
 
-form {
-margin: 30px 0;
-padding: 10px;
+.thumb {
+    width: 24px;
+    height: 24px;
+    float: none;
+    position: relative;
+    top: 7px;
 }
 
-h2 {
-  margin: 20px;
-  font-weight: 600;
+form .progress {
+    line-height: 15px;
 }
+
+.progress {
+    display: inline-block;
+    width: 100px;
+    border: 3px groove #CCC;
+}
+
+.progress div {
+    font-size: smaller;
+    background: orange;
+    width: 0;
+}
+
+
+
+body,html {
+
+  height:100%;
+  width:100%;
+  padding:0px;
+  margin:0px;
+
+}
+
+#wrapper {
+
+  height:100%;
+  width:100%;
+  padding:50px;
+
+}
+
+.light {
+
+ background-color:#EFEFEF;
+ font-family:Arial;
+ font-size:15px;
+
+}
+
+.light h1 {
+
+  color:#AACCDD;
+
+}
+
+.dark {
+
+ background-color:#AABBCC;
+ font-family:Arial;
+ font-size:20px;
+
+}
+
+.dark h1 {
+
+  color:#FFFFAA;
+
+}
+
+.green {
+  background-color: lightblue;
+  font-family:Arial;
+  font-size:16px;
+}
+
+.green h1 {
+
+  color: red;
+
+}
+
+

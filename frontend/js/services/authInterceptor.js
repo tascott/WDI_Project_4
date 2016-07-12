@@ -1,12 +1,12 @@
 angular
-  .module('mymoments')
+  .module('myMoments')
   .factory('authInterceptor', AuthInterceptor);
 
 AuthInterceptor.$inject = ['API', 'TokenService'];
 function AuthInterceptor(API, TokenService) {
 
   return {
-    request: function(config) {
+    request: function(config){
       var token = TokenService.getToken();
 
       if (config.url.indexOf(API) === 0 && token) {
@@ -15,7 +15,6 @@ function AuthInterceptor(API, TokenService) {
       return config;
     },
     response: function(res){
-
       if (res.config.url.indexOf(API) === 0 && res.data.token) {
         TokenService.setToken(res.data.token);
       }
