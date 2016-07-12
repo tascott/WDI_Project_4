@@ -86,3 +86,80 @@ body,html {
 }
 
 
+
+
+.layout1 {
+  background-image: url("http://4.bp.blogspot.com/-w3I5XQ1vWbg/Up6hKWsBRrI/AAAAAAAABss/I7_nbS_7wQ0/s1600/Nice+Wallpapers+(12).jpg");
+background-size: cover;
+width: 330px;
+}
+
+
+
+.layout1 h1 {
+  font-size: 30px;
+}
+
+
+
+
+.layout1 .box {
+  width: 430px;
+  border: 1px solid black;
+  float: left;
+}
+
+.layout1 h3 {
+  font-size: 60px;
+}
+
+
+
+.layout2 h1 {
+  font-size: 30px;
+}
+
+
+.layout2 div {
+  width: 600px;
+}
+
+.layout2 h3 {
+  font-size: 60px;
+}
+
+.layout2 {
+  background-image: url("http://www.planwallpaper.com/static/images/518169-backgrounds.jpg");
+background-size: cover;
+width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

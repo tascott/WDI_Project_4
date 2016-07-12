@@ -7,7 +7,11 @@ var eventSchema = mongoose.Schema({
 
   bgcolor: String,
   scndcolor: String,
+  thirdcolor: String,
+
   layout: String,
+
+  header: String,
 
 
   user: {type: mongoose.Schema.ObjectId, ref: "User"}, 

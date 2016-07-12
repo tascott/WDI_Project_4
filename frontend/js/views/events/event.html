@@ -1,13 +1,27 @@
-<div style="background-color: {{events.data.event.bgcolor}}">
-
+<div id="wrapper" style="background-color: {{events.data.event.bgcolor}}" class="{{events.data.event.layout}}" >
+<div class="box">
     <h1>Title is {{ events.data.event.title }}</h1>
+  </div>  
+
+  <div class="box">
     <h4>Description is {{ events.data.event.description }}</h4>
+  </div>
 
+  <div class="box">
+    <h4>layout Class is {{events.data.event.layout}} </h4>
+  </div>
+
+  <div class="box">
+    <h3>Comments</h3>
     <ul>
-        <li ng-repeat="comment in events.data.event.comments">{{comment.body}}</li>
+      <li ng-repeat="comment in events.data.event.comments">{{comment.body}}</li>
     </ul>
+  </div>
 
-</div>
+
+
+
+<div class="box">
 
 <form ng-submit="events.save()">
 
@@ -18,7 +32,7 @@
 
 </form>
 
-
+<h3>Add Comments</h3>
 <form ng-submit="events.addComment()">
 
   <textarea ng-model ="events.newComment.comment.body"></textarea>
@@ -26,9 +40,9 @@
   <input type="submit" value="Post">
 
 </form>
+</div>
 
-
-
+</div>
 
 
 

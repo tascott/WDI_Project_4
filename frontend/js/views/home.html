@@ -1,3 +1,20 @@
 <h1>Home</h1>
 
 
+<div ng-controller="MainController as main">
+  Upload single file on form submit
+  <form name="main.form" ng-submit="main.uploadSingle()">
+    <input type="file" ngf-select ng-model="main.file" name="file">Select File</div>
+    <button type="submit">Submit</button>
+  </form>
+
+
+  <hr>
+  Upload multiple files on form submit
+  <form name="main.multiForm" ng-submit="main.uploadMulti()">
+    <input type="file" ngf-select ng-model="main.files" name="files" ngf-multiple="true">Select Files</div>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+
