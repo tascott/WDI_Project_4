@@ -5,8 +5,8 @@ var validator = require('validator');
 var userSchema = mongoose.Schema({
   local: {
     username:     { type: String },
-    name:         { type: String },
-    image:        { type: String },
+    firstName:     { type: String },
+    lastName:     { type: String },
     email:        { type: String, unique: true, required: true },
     passwordHash: { type: String, required: true }
   },
@@ -22,7 +22,7 @@ userSchema.methods.validatePassword = function(password) {
 /* Virtuals */
 
 userSchema.virtual('local.password')
-.get(function() {
+.get(function() {m
   return this._password;
 })
 .set(function(password) {

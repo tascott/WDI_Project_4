@@ -34,15 +34,13 @@ app.use(morgan('dev'));
 app.use(cors());
 app.use(passport.initialize());
 
-app.use('/', expressJWT({ secret: secret })
-  .unless({
-    path: [
-      { url: '/login', methods: ['POST'] },
-      { url: '/register', methods: ['POST'] },
-      { url: '/users', methods: ['GET'] }
-
-    ]
-  }));
+// app.use('/api', expressJWT({ secret: secret })
+//   .unless({
+//     path: [
+//       { url: '/api/login', methods: ['POST'] },
+//       { url: '/api/register', methods: ['POST'] }
+//     ]
+//   }));
 
 app.use(function (err, req, res, next) {
   if (err.name === 'UnauthorizedError') {
@@ -52,6 +50,6 @@ app.use(function (err, req, res, next) {
 });
 
 var routes = require('./config/routes');
-app.use(routes);
+app.use("/api", routes);
 
 app.listen(config.port);
