@@ -32,11 +32,6 @@ function MainRouter($stateProvider, $urlRouterProvider, $locationProvider) {
       url: "/users/:id",
       templateUrl: "./js/views/users/show.html",
       controller: "UsersController as profile"
-      // controller: function($scope, $stateParams, User) {
-      //   User.get({ id: $stateParams.id }, function(res){
-      //     $scope.$parent.users.user = res.user;
-      //   });
-      // }
     })
     .state('event', {
       url: "/events/:id",

@@ -2,8 +2,8 @@ angular
   .module('myMoments')
   .controller('UsersController', UsersController);
 
-UsersController.$inject = ['User', 'TokenService', '$state', 'CurrentUser', '$stateParams'];
-function UsersController(User, TokenService, $state, CurrentUser, $stateParams){
+UsersController.$inject = ['$rootScope', 'User', 'TokenService', '$state', 'CurrentUser', '$stateParams'];
+function UsersController($rootScope, User, TokenService, $state, CurrentUser, $stateParams){
 
   var self = this;
 
@@ -12,6 +12,10 @@ function UsersController(User, TokenService, $state, CurrentUser, $stateParams){
       self.user = res.user;
     });
   }
+
+  $rootScope.$on('$stateChangeStart' ,function(event,toState){
+      self.isHome = toState.name == "home";
+  });
 
   
   self.all           = [];
