@@ -49,8 +49,8 @@ var upload = multer({
     // the folder within the bucket
     dirname: 'uploads',
     // set this to your bucket name
-    bucket: 'WDI_S3_BUCKET',
-    // your AWS keys
+    bucket: process.env.WDI_S3_BUCKET,
+        // your AWS keys
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
     // the region of your bucket
@@ -72,18 +72,6 @@ var upload = multer({
   })
 });
 
-// This will upload a single file.
-app.post('/api/upload/single', upload.single('file'), function(req, res) {
-  res.status(200).json({ filename: req.file.key });
-});
-
-// This will upload multiple files.
-app.post('/api/upload/multi', upload.array('files'), function(req, res) {
-  filenames = Object.keys(req.files).map(function(key) {
-    return req.files[key].key;
-  });
-  res.status(200).json({ filenames: filenames });
-});
 
 
 app.use(methodOverride(function(req, res){
@@ -112,6 +100,12 @@ app.use(function (err, req, res, next) {
 
 var routes = require('./config/routes');
 app.use("/api", routes);
+
+// This will upload a single file.
+app.post('/api/upload/single', upload.single('file'), function(req, res) {
+  res.status(200).json({ filename: req.file.key });
+});
+
 
 
 
