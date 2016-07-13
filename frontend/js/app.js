@@ -35,8 +35,13 @@ function MainRouter($stateProvider, $urlRouterProvider, $locationProvider) {
     })
     .state('event', {
       url: "/events/:id",
-      templateUrl: "./js/views/events/event.html",
+      templateUrl: "./js/views/events/index.html",
       controller: "EventsShowController as events",
+    })
+    .state('event-new', {
+      url: "/eventnew",
+      templateUrl: "./js/views/events/new.html",
+      controller: "EventsController as events"
     });
 
   $urlRouterProvider.otherwise("/");

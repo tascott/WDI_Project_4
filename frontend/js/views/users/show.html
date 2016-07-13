@@ -1,56 +1,16 @@
-
 <section ng-controller="EventsController as events">
-
-<div id="profileContainer">
-
-
-<h2>New Event</h2>
-
-<form id="new-event" ng-submit="events.createEvent()">
-  <input type="text" name='title' id="event-title" placeholder="Title" ng-model="events.event.title">
-
-  <input type="text" name='description' id="event-description" placeholder="Description" ng-model="events.event.description">
-
-  <input type="text" name='location' id="event-location" placeholder="Location" ng-model="events.event.location">
-
-  <input type="text" name='bgcolor' id="event-bgcolor" placeholder="Background Color" ng-model="events.event.bgcolor">
-
-  <input type="text" name='scndcolor' id="event-scndcolor" placeholder="Second color" ng-model="events.event.scndcolor">
-
-
-  <select ng-model="events.event.layout">
-    <option ng-model="events.event.layout" value="layout1">layout1</option>
-    <option ng-model="events.event.layout" value="layout2">layout2</option>
-    <option ng-model="events.event.layout" value="layout3">layout3</option>
-  </select>
-
-
-  <input type="submit" value='Save' id="submit">
-</form>
-
-
-  <div class="row">
-    <div class="col-sm-6 col-md-4">
-      <div class="caption">
-        <br>
-        <h4>My Events</h4>
-        <ul>
-          <li ng-repeat="event in profile.user.events">
-            <h6>Title: {{ event.title }}</h6>
-            <p>Description: {{ event.description }}</p>
-            <p>Layout: {{ event.layout }}</p>
-            <a ui-sref="event({ id: event._id })">Show</a>
-          </li>
-        </ul>
-      </div>
+  <div id="profileContainer">
+    <h4>My Events</h4>
+    <div ng-repeat="event in profile.user.events" class="eventTile">
+      <h6>Title: {{ event.title }}</h6>
+      <p>Description: {{ event.description }}</p>
+      <p>Layout: {{ event.layout }}</p>
+      <a ui-sref="event({ id: event._id })">Show</a>
+      <a ng-click="events.removeEvent(event)">Delete</a>
+      <button ng-click="events.removeEvent()"></button>
     </div>
   </div>
 </section>
-
-
-
-</div>
-
 
 <!-- <div ng-controller="ThemeController as theme">
 

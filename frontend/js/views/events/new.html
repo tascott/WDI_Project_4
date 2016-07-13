@@ -7,21 +7,19 @@
 
   <input type="text" name='location' id="event-location" placeholder="Location" ng-model="events.event.location">
 
-  <input type="text" name='bgcolor' id="event-bgcolor" placeholder="Background Color" ng-model="events.event.bgcolor">
+  <label> Background Color </label>
+  <input type="color" name='bgcolor' id="event-bgcolor" placeholder="Background Color" ng-model="events.event.bgcolor">
 
-  <input type="text" name='scndcolor' id="event-scndcolor" placeholder="Second color" ng-model="events.event.scndcolor">
+  <label> Secondary Color </label>
+  <input type="color" name='scndcolor' id="event-scndcolor" placeholder="Second color" ng-model="events.event.scndcolor">
 
-<!--   <input type="text" name='layout' id="event-layout" placeholder="Layout" ng-model="events.event.layout"> -->
-
+  <label> Layout </label>
   <select ng-model="events.event.layout">
     <option ng-model="events.event.layout" value="layout1">layout1</option>
     <option ng-model="events.event.layout" value="layout2">layout2</option>
     <option ng-model="events.event.layout" value="layout3">layout3</option>
   </select>
 
- 
-
-
 
   <input type="submit" value='Save' id="submit">
-</form>
+</form> 

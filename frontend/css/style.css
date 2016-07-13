@@ -11,7 +11,6 @@ h1 {
 }
 
 
-
 /*.light {
 
  background-color:#EFEFEF;
@@ -78,15 +77,17 @@ h1 {
   background-image: url("http://4.bp.blogspot.com/-w3I5XQ1vWbg/Up6hKWsBRrI/AAAAAAAABss/I7_nbS_7wQ0/s1600/Nice+Wallpapers+(12).jpg");
   background-size: cover;
   width: 100%;
+  padding: 0 100px;
+  padding-top: 40px;
+
 }
 
 
 
 .layout1 h1 {
-  font-size: 70px;
+  font-size: 40px;
   margin: none;
 }
-
 
 
 
@@ -96,16 +97,29 @@ h1 {
   float: left;
 }
 */
+
 .layout1 h3 {
-  font-size: 60px;
+  font-size: 20px;
 }
 
+
+.layout1 .layoutHeader {
+  background-color: #F5F5F5;
+  padding: 10px;
+  border: 2px solid black;
+}
+
+.layout1 .commentsSection {
+  border : 2px solid black;
+  margin-top: 15px;
+  padding: 10px;
+}
 
 /* ************** Layout 2 Styles ******************/
 
 
 .layout2 h1 {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 
@@ -114,13 +128,13 @@ h1 {
 }
 
 .layout2 h3 {
-  font-size: 60px;
+  font-size: 20px;
 }
 
 .layout2 {
   background-image: url("http://www.planwallpaper.com/static/images/518169-backgrounds.jpg");
-background-size: cover;
-width: 100%;
+  background-size: cover;
+  width: 100%;
 }
 
 
@@ -402,4 +416,24 @@ form .progress {
 
 #profileContainer {
   color: black;
+  padding: 50px;
+  overflow: auto;
+  text-align: center;
 }
+
+.eventTile {
+  min-width: 300px;
+  width: 31%;
+  background-color: lightgrey;
+  float:left;
+  margin: 10px;
+  padding: 10px;
+  overflow: auto;
+}
+
+
+#profileformholder {
+  margin: 50px;
+}
+
+

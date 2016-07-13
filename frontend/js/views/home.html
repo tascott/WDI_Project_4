@@ -1,31 +1,19 @@
-
 <script src="./js/jquery.slides.js"></script>
 
-
-
-
 <div id="splash">
-
   <div class="homeWrapper">
-
     <div id="containerText">
-    <h1> Welcome to myMoments</h1>
+      <h1> Welcome to myMoments</h1>
       <p>Design Your Own Collaborative Event Page</p>
       <a id="anchorID" href="#slidesHolder"><div class="arrow-down-light-blue">Get Started</div> <i id="icon1" class="icon-circle-arrow-down"></i></a>
     </div>
   </div>
-
 </div>
-
-
 
 <div id="slidesHolder">
 
-<h2> How It Works </h2>
+  <h2> How It Works </h2>
 
-
-
-<h4></h4>
   <div class="container">
     <div id="slides">
       <img src="../assets/images/bannerex1.jpg" >
@@ -37,38 +25,26 @@
       <a href="#" class="slidesjs-next slidesjs-navigation"><i class="icon-chevron-right icon-large"></i></a>
     </div>
   </div>
-
-
-
   <a id="anchorID2" href="#mainBottom"><div class="arrow-down-light-blue"><i id="icon2"  class="icon-circle-arrow-down"></i></div></a>
-
 </div>
-
-
-
 
 <div id="mainBottom">
-
-<div ng-controller="MainController as main">
+  <div ng-controller="MainController as main">
   Upload single file on form submit
 
-  <form name="main.form" ng-submit="main.uploadSingle()">
-    <input type="file" ngf-select ng-model="main.file" name="file">Select File</input>
-
-    <button type="submit">Submit</button>
-  </form>
-
-
-  <hr>
-  Upload multiple files on form submit
-  <form name="main.multiForm" ng-submit="main.uploadMulti()">
-    <input type="file" ngf-select ng-model="main.files" name="files" ngf-multiple="true">Select Files</input>
-    <button type="submit">Submit</button>
-  </form>
-
+    <form name="main.form" ng-submit="main.uploadSingle()">
+      <input type="file" ngf-select ng-model="main.file" name="file">Select File</input>
+      <button type="submit">Submit</button>
+    </form>
+    <hr>
+    Upload multiple files on form submit
+    <form name="main.multiForm" ng-submit="main.uploadMulti()">
+      <input type="file" ngf-select ng-model="main.files" name="files" ngf-multiple="true">Select Files</input>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
 </div>
 
-</div>
 <script>
   $(function() {
     $('#slides').slidesjs({

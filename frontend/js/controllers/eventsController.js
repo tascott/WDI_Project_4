@@ -14,6 +14,7 @@ function EventsController(Event, $scope, $http, CurrentUser, $stateParams, $stat
   self.createEvent    = createEvent;
   self.removeEvent    = removeEvent;
 
+
   function createEvent(){
    self.currentUser  = CurrentUser.getUser();
    self.event.user   = self.currentUser._id;
@@ -21,16 +22,12 @@ function EventsController(Event, $scope, $http, CurrentUser, $stateParams, $stat
    $http.post("http://localhost:3000/api/events/" , {event: self.event}, function(data) {
      console.log("success");
    });
- }
+  }
 
  function removeEvent(event){
-  $http
-  .delete('http://localhost:3000/events/' + event._id)
-  .then(function(response){
-    var user = $scope.$parent.users.user;
-    var index = self.events.indexOf(event);
-    user.events.splice(index, 1);
-  });
-}
-
+  Event.delete({ id: event._id}), function() {
+      var index = self.events.indexOf(event);
+      self.events.splice(index, 1);
+    }
+  }
 }

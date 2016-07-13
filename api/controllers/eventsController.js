@@ -60,6 +60,7 @@ function eventsUpdate(req, res){
 
 function eventsDelete(req, res){
   var id = req.params.id;
+  console.log(id);
 
   Event.remove({ _id: id }, function(err) {
     if (err) return res.status(500).send(err);
