@@ -5,6 +5,10 @@ body, html {
   font-family: 'Noto Sans', sans-serif;
 }
 
+.tweetBox {
+  border: 1px solid black;
+}
+
 .photoGallery {
   background-image: url("http://justifiedgrid.com/wp-content/uploads/og-image-home-screenshot.jpg");
   background-size: cover;
@@ -226,12 +230,17 @@ body, html {
   width: 100%;
 }
 
+.layout3 .columnhalf {
+  width: 50%;
+}
+
 .layout3 h1 {
   font-size: 20px;
 }
 
 .layout3 div {
   float: left;
+  margin: 0 auto;
 }
 
 .layout3 h3 {
@@ -239,7 +248,7 @@ body, html {
 }
 
 .layout3 #mapHolder {
-  width: 35%;
+  width: 33%;
   height: 94vh;
   float: left;
   border: 1px solid black;
@@ -251,7 +260,7 @@ body, html {
 }
 
 .layout3 .layoutHeader {
-  width: 35%;
+  width: 33%;
   height: 94vh;
   background-size: cover;
   background-position: center;
@@ -262,7 +271,7 @@ body, html {
 .layout3 .commentsSection {
   padding: 10px;
   text-align: center;
-  width: 35%;
+  width: 32%;
   height: 94vh;
   margin-bottom: 15px;
   float: left;
@@ -283,7 +292,7 @@ body, html {
 }
 
 .layout3 #tweetBox {
-  width: 35%;
+  width: 32%;
   height: 94vh;
   overflow-y: auto;
   padding: 20px;
@@ -297,7 +306,7 @@ body, html {
 }
 
 .layout3 .editPanel {
-  width: 35%;
+  width: 32%;
   float: left;
   height: 94vh;
   padding: 8px;
@@ -318,7 +327,7 @@ body, html {
 
 .layout3 .photoGallery {
   padding: 20px;
-  width: 35%;
+  width: 32%;
   height: 94vh;
   float: left;
   border: 1px solid black;
@@ -326,6 +335,7 @@ body, html {
 
 .layout3 #wrapper2 {
   display: flex;
+  flex-wrap: no-wrap;
 }
 
 .layout4 {
@@ -490,15 +500,13 @@ body, html {
 }
 
 .layout6 .profilePhoto {
+  padding-top: 15px;
   height: 200px;
   width: 200px;
-  text-align: center;
-  margin: 0 auto;
-  padding-top: 15px;
 }
 
 .layout6 .profilePhoto img {
-  margin-left: 40px;
+  margin: 0 auto;
 }
 
 .layout6 .profileData {
@@ -536,7 +544,7 @@ body, html {
 .layout6 .editPanel {
   padding-top: 50px;
   width: 100%;
-  height: 500px;
+  height: 300px;
   padding: 8px;
   text-align: center;
 }
@@ -875,5 +883,15 @@ form .progress {
 #new-event {
   display: block;
   text-align: center;
+  margin: 0 auto;
+}
+
+.centreme {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.centerme img {
   margin: 0 auto;
 }
