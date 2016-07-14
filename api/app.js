@@ -9,6 +9,12 @@ var cookieParser   = require("cookie-parser");
 var methodOverride = require("method-override");
 var jwt            = require('jsonwebtoken');
 var expressJWT     = require('express-jwt');
+var server         = require('http').createServer(app);
+var io             = require('socket.io')(server);
+
+var Twitter = require('twitter');
+
+
 
 var multer         = require('multer');
 var s3             = require('multer-s3');
@@ -21,6 +27,52 @@ var User           = require('./models/user');
 var secret         = require('./config/config').secret;
 
 var sass = require('node-sass');
+
+
+
+
+var twitter = new Twitter({
+  consumer_key: process.env.TWITTER_CONSUMER_KEY,
+  consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+  access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
+  access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
+});
+
+io.on('connect', function(socket) {
+  socket.on('updateTerm', function(searchTerm) {
+    socket.emit('updatedTerm', searchTerm)
+
+    if (stream) {
+      stream.stop();
+    }
+
+    stream = twitter.stream('statuses/filter', { track: searchTerm, language: 'en'});
+
+    stream.on('tweet', function(tweet) {
+      var data = {}
+      data.name = tweet.user.name;
+      data.screen_name = tweet.user.screen_name;
+      data.text = tweet.text;
+      data.user_profile_image = tweet.user.profile_image_url;
+      socket.emit('tweets', data)
+    });
+  });
+});
+
+
+
+
+
+
+// client.stream('statuses/filter', {track: '#cheese'},  function(stream) {
+//   stream.on('data', function(tweet) {
+//     socket.emit('tweets', tweet)
+//   });
+
+//   stream.on('error', function(error) {
+//     console.log(error);
+//   });
+// });
 
 
 
@@ -109,4 +161,4 @@ app.post('/api/upload/single', upload.single('file'), function(req, res) {
 
 
 
-app.listen(config.port);
+server.listen(config.port);

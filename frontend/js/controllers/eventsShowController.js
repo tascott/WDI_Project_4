@@ -8,18 +8,12 @@ function EventsShowController($stateParams, Event , Comment) {
   var self = this;
 
   self.data = Event.get({id:$stateParams.id});
-
   self.newComment = new Comment();
-
   self.newComment.comment = {};
-
-
   self.save = function() {
-
     self.data.$update(function(err , data){
       console.log(err , data);
     });
-
   }
 
   self.addComment = function() {
@@ -38,6 +32,9 @@ function EventsShowController($stateParams, Event , Comment) {
 
   }
 
+  var socket = io();
 
-
+  socket.on('connect', function() {
+    console.log('Connected!');
+  });
 }

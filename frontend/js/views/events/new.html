@@ -1,17 +1,50 @@
-<h2>New Event</h2>
+<div id="neweventpage">
+
+<h2>Create Your Event</h2>
 
 <form id="new-event" ng-submit="events.createEvent()">
   <input type="text" name='title' id="event-title" placeholder="Title" ng-model="events.event.title">
 
   <input type="text" name='description' id="event-description" placeholder="Description" ng-model="events.event.description">
 
-  <input type="text" name='location' id="event-location" placeholder="Location" ng-model="events.event.location">
+
+
+
+
+
+  <label> Include Twitter? </label>
+  <select ng-model="events.event.twitter">
+    <option ng-model="events.event.twitter" value="false">No</option>
+    <option ng-model="events.event.twitter" value="true">Yes</option>
+  </select>
+
+  <label> If yes, input the hashtag here: </label>
+  <input type="text" name='twitter' id="event-twitter" placeholder="Twitter Tag" ng-model="events.event.twittertag">
+
+
+  <label> Include Map Location? </label>
+  <select ng-model="events.event.location">
+    <option ng-model="events.event.location" value="false">No</option>
+    <option ng-model="events.event.location" value="true">Yes</option>
+  </select>
+
+
+  <label> If yes, input the postcode here: </label>
+  <input type="text" name='postcode' id="event-postcode" placeholder="Postcode" ng-model="events.event.postcode">
+  
+
+
+
+
 
   <label> Background Color </label>
-  <input type="color" name='bgcolor' id="event-bgcolor" placeholder="Background Color" ng-model="events.event.bgcolor">
+  <input type="color" value="#f5f5f5" name='bgcolor' id="event-bgcolor" placeholder="Background Color" ng-model="events.event.bgcolor">
 
   <label> Secondary Color </label>
-  <input type="color" name='scndcolor' id="event-scndcolor" placeholder="Second color" ng-model="events.event.scndcolor">
+  <input type="color" value="#f5f5f5" name='scndcolor' id="event-scndcolor" placeholder="Second color" ng-model="events.event.scndcolor">
+
+  <label> Third Color </label>
+  <input type="color" value="#f5f5f5" name='scndcolor' id="event-thirdcolor" placeholder="Third color" ng-model="events.event.thirdcolor">
 
   <label> Layout </label>
   <select ng-model="events.event.layout">
@@ -21,5 +54,32 @@
   </select>
 
 
+
+  <input type="file" ngf-select ng-model="events.file" name="file">Select File</input>
+  <a ng-click="events.uploadSingle()" >Upload</a>
+
+<br>
+<br>
+<br>
+
+
   <input type="submit" value='Save' id="submit">
 </form> 
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+

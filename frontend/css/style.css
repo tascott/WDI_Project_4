@@ -1,15 +1,38 @@
-body,html {
-
-  height:100%;
-  width:100%;
-  padding:0px;
-  margin:0px;
+body, html {
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
 }
 
 h1 {
   margin: 0;
 }
 
+
+#neweventpage {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.editPanel {
+  width: 100%;
+  height: 80px;
+  border: 3px solid blue;
+}
+
+#tweetBox {
+  width: 100%;
+  height: 600px;
+  border: 3px solid blue;
+}
+
+
+.photoGallery {
+  width: 100%;
+  height: 80px;
+  border: 3px solid red;
+}
 
 /*.light {
 
@@ -53,40 +76,46 @@ h1 {
 
 */
 
-
-#wrapper{
-
-  height:100%;
-  min-height: 100vh;
-  width:100%;
+textarea {
+  width: 100%;
 }
 
-
+#wrapper {
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+}
 
 /* ************** Login/Register Styles ******************/
-
 #login {
   margin-right: 100px;
   margin-left: 100px;
 }
 
-
 /* ************** Layout 1 Styles ******************/
-
 .layout1 {
   background-image: url("http://4.bp.blogspot.com/-w3I5XQ1vWbg/Up6hKWsBRrI/AAAAAAAABss/I7_nbS_7wQ0/s1600/Nice+Wallpapers+(12).jpg");
   background-size: cover;
   width: 100%;
   padding: 0 100px;
   padding-top: 40px;
-
 }
-
-
 
 .layout1 h1 {
   font-size: 40px;
   margin: none;
+}
+
+.layout1 #mapHolder {
+  border: 3px solid black;
+  margin
+}
+
+
+.layout1 iframe {
+  width: 100%;
+  height: 300px;
+  border: 1px solid black;
 }
 
 
@@ -102,7 +131,6 @@ h1 {
   font-size: 20px;
 }
 
-
 .layout1 .layoutHeader {
   background-color: #F5F5F5;
   padding: 10px;
@@ -110,18 +138,28 @@ h1 {
 }
 
 .layout1 .commentsSection {
-  border : 2px solid black;
+  border: 2px solid black;
   margin-top: 15px;
   padding: 10px;
+  background-color: lightgrey;
+}
+
+.layout1 .profilePhoto {
+  border: 3px solid red;
+  height: 300px;
+  width: 300px;
+}
+
+
+.profilePhoto img {
+  height: 100%;
+  width: 100%;
 }
 
 /* ************** Layout 2 Styles ******************/
-
-
 .layout2 h1 {
   font-size: 20px;
 }
-
 
 .layout2 div {
   width: 600px;
@@ -137,54 +175,42 @@ h1 {
   width: 100%;
 }
 
-
-
-
 /* ************** Image Upload Styles ******************/
-
-
-
 .media-object {
   max-width: 60px;
 }
 
 .thumb {
-    width: 24px;
-    height: 24px;
-    float: none;
-    position: relative;
-    top: 7px;
+  width: 24px;
+  height: 24px;
+  float: none;
+  position: relative;
+  top: 7px;
 }
 
 form .progress {
-    line-height: 15px;
+  line-height: 15px;
 }
 
 .progress {
-    display: inline-block;
-    width: 100px;
-    border: 3px groove #CCC;
+  display: inline-block;
+  width: 100px;
+  border: 3px groove #CCC;
 }
 
 .progress div {
-    font-size: smaller;
-    background: orange;
-    width: 0;
+  font-size: smaller;
+  background: orange;
+  width: 0;
 }
 
-
-
-
-
-
 /* ************** jQuery Gallery Styles ******************/
-
 #slides {
-  display: none
+  display: none;
 }
 
 #slides .slidesjs-navigation {
-  margin-top:3px;
+  margin-top: 3px;
 }
 
 #slides .slidesjs-previous {
@@ -220,121 +246,105 @@ form .progress {
 
 .slidesjs-pagination li a.active,
 .slidesjs-pagination li a:hover.active {
-  background-position: 0 -13px
+  background-position: 0 -13px;
 }
 
 .slidesjs-pagination li a:hover {
-  background-position: 0 -26px
+  background-position: 0 -26px;
 }
 
 #slides a:link,
 #slides a:visited {
-  color: #333
+  color: #333;
 }
 
 #slides a:hover,
 #slides a:active {
-  color: #9e2020
+  color: #9e2020;
 }
 
 #slides {
-  display: none
+  display: none;
 }
 
 .container {
-  margin: 0 auto
+  margin: 0 auto;
 }
 
 /* For tablets & smart phones */
 @media (max-width: 767px) {
-  body {
-  }
   .container {
-    width: auto
+    width: auto;
   }
 }
 
 /* For smartphones */
 @media (max-width: 480px) {
   .container {
-    width: auto
+    width: auto;
   }
 }
 
 /* For smaller displays like laptops */
 @media (min-width: 768px) and (max-width: 979px) {
   .container {
-    width: 724px
+    width: 724px;
   }
 }
 
 /* For larger displays */
 @media (min-width: 1200px) {
   .container {
-    width: 1170px
+    width: 1170px;
   }
 }
 
 /* ************** navbar overriding defaults ******************/
-
-
-
 .navbar {
-    margin-bottom: 0 !important;
+  margin-bottom: 0 !important;
 }
-
 
 .navbar-default {
-    border:none;
-    color: white;
+  border: none;
+  color: white;
 }
-
 
 .navbar .nav > li > a {
-    float: none;
-    line-height: 19px;
-    padding: 9px 10px 11px;
-    text-decoration: none;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    color:  black;
+  float: none;
+  line-height: 19px;
+  padding: 9px 10px 11px;
+  text-decoration: none;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  color: black;
 }
 
-
 .navbar-default .navbar-brand {
-    color: black;
+  color: black;
 }
 
 .navbar-home {
-
   background-color: transparent;
   background-image: none;
-
 }
 
 .navbar-home .nav > li > a {
-    float: none;
-    line-height: 19px;
-    padding: 9px 10px 11px;
-    text-decoration: none;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    color:  white;
+  float: none;
+  line-height: 19px;
+  padding: 9px 10px 11px;
+  text-decoration: none;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  color: white;
 }
 
-
 .navbar-home .nav > li > a:hover {
-    color:  lightgrey;
+  color: lightgrey;
 }
 
 .navbar-home .navbar-brand {
-    color: white;
+  color: white;
 }
 
-
 /* ************** "home" text and styles/events ******************/
-
-
-
-
 #splash {
   height: 100vh;
   width: 100%;
@@ -345,25 +355,24 @@ form .progress {
   margin-top: -70px;
 }
 
-
 #splash h1 {
   margin: none;
   padding: none;
 }
 
-
-
 .homeWrapper {
   height: 100%;
   width: 100%;
-  
-   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.8+19,0.01+74,0.01+97,0.01+97 */
-   background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.8) 19%, rgba(0,0,0,0.01) 74%, rgba(0,0,0,0.01) 97%, rgba(0,0,0,0.01) 100%); /* FF3.6-15 */
-   background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.8) 19%,rgba(0,0,0,0.01) 74%,rgba(0,0,0,0.01) 97%,rgba(0,0,0,0.01) 100%); /* Chrome10-25,Safari5.1-6 */
-   background: radial-gradient(ellipse at center, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.8) 19%,rgba(0,0,0,0.01) 74%,rgba(0,0,0,0.01) 97%,rgba(0,0,0,0.01) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', endColorstr='#03000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  }
-
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.8+19,0.01+74,0.01+97,0.01+97 */
+  background: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 19%, rgba(0, 0, 0, 0.01) 74%, rgba(0, 0, 0, 0.01) 97%, rgba(0, 0, 0, 0.01) 100%);
+  /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 19%, rgba(0, 0, 0, 0.01) 74%, rgba(0, 0, 0, 0.01) 97%, rgba(0, 0, 0, 0.01) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 19%, rgba(0, 0, 0, 0.01) 74%, rgba(0, 0, 0, 0.01) 97%, rgba(0, 0, 0, 0.01) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', endColorstr='#03000000',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */
+}
 
 #containerText {
   position: relative;
@@ -381,7 +390,6 @@ form .progress {
 #slidesHolder {
   text-align: center;
   height: 100vh;
-
 }
 
 #slidesHolder h2 {
@@ -397,7 +405,7 @@ form .progress {
 #mainBottom {
   height: 100vh;
   width: 100%;
- border-top: 1px solid lightblue;
+  border-top: 1px solid lightblue;
 }
 
 .icon-circle-arrow-down {
@@ -405,15 +413,12 @@ form .progress {
   color: grey;
   margin-top: 100px;
 }
+
 #icon2 {
-
   font-color: black;
-
 }
 
 /* ************** profile page ******************/
-
-
 #profileContainer {
   color: black;
   padding: 50px;
@@ -425,15 +430,12 @@ form .progress {
   min-width: 300px;
   width: 31%;
   background-color: lightgrey;
-  float:left;
+  float: left;
   margin: 10px;
   padding: 10px;
   overflow: auto;
 }
 
-
 #profileformholder {
   margin: 50px;
 }
-
-

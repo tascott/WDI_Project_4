@@ -17,6 +17,9 @@ var eventSchema = mongoose.Schema({
   postcode: String,
 
 
+  uploads: Array,
+
+
   user: {type: mongoose.Schema.ObjectId, ref: "User"}, 
   comments: [{ type: mongoose.Schema.ObjectId, ref: 'Comment' }]
 });

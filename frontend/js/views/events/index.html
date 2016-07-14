@@ -4,16 +4,76 @@
     <h1>{{ events.data.event.title }}</h1>
     <h4>{{ events.data.event.description }}</h4>
     <h4>.layout = {{events.data.event.layout}} </h4>
+    <h4>.postcode = {{events.data.event.postcode}} </h4>
+    <h4>.photo = {{events.data.event.profilePhoto}} </h4>
+
+    <p>Colors: {{ events.data.event.bgcolor }}{{ events.data.event.scndcolor }}{{ events.data.event.thirdcolor }}</p>
+
+
+    <p>Header: {{ events.data.event.header }}</p>
+    <p>Twitter: {{ events.data.event.twitter }}</p>
+    <p>TwitterTag: {{ events.data.event.twittertag }}</p>
+    <p>Google?: {{ events.data.event.location }}</p>
+
+
+
+
+
+    <div class="profilePhoto">
+      <img src="https://s3-eu-west-1.amazonaws.com/wdi-20-ldn-ts/{{events.data.event.profilePhoto}}">
+    </div>
   </div>
-  <div class="commentsSection">
+
+
+  <div class="editPanel">
+
+    <label>Show Map</label>
+    <input type="checkbox" ng-model="theme.theme.show_map">
+
+    <label>Show Comments</label>
+    <input type="checkbox" ng-model="theme.theme.show_comments">
+
+    <label>Show Gallery</label>
+    <input type="checkbox" ng-model="theme.theme.show_gallery">
+
+
+  </div>
+
+
+
+  <div class="commentsSection" ng-hide="theme.theme.show_comments">
     <h3>Comments </h3>
     <ul>
-      <li ng-repeat="comment in events.data.event.comments">{{comment.body}}</li>
+      <li style = 'font-style: italic;' ng-repeat="comment in events.data.event.comments"> {{comment.name}} - "{{comment.body}}"</li>
+
     </ul>
     <h3>Add Comments</h3>
     <form ng-submit="events.addComment()">
-      <textarea ng-model ="events.newComment.comment.body"></textarea>
-      <input type="submit" value="Post">
+      <textarea ng-model="events.newComment.comment.body"></textarea>
+
+      <input type="text" placeholder="Your Name" ng-model="events.newComment.comment.name" >
+      <input type="submit" value="Send Comment">
     </form>
   </div>
+
+
+  <div class="photoGallery" ng-hide="theme.theme.show_gallery">
+
+    <h1>Gallery</h1>
+
+
+
+  </div>
+
+  <div id="tweetBox">
+    <h1>Twitter</h1>
+  </div>
+
+  <div id="mapHolder" ng-hide="theme.theme.show_map">
+    <iframe
+    frameborder="0" style="border:0"
+    src="https://www.google.com/maps/embed/v1/search?key=AIzaSyD_Dhg3DEYXMLnwyV1uoQlC8UyO2nWght8&q=nw26hb" allowfullscreen>
+  </iframe>
+</div>
+
 </div>

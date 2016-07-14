@@ -4,19 +4,31 @@
     <div ng-repeat="event in profile.user.events" class="eventTile">
       <h6>Title: {{ event.title }}</h6>
       <p>Description: {{ event.description }}</p>
+      <p>Photo ID: {{ event.profilePhoto }}</p>
+      <p>Colors: {{ event.bgcolor }}{{ event.scndcolor }}{{ event.thirdcolor }}</p>
+
       <p>Layout: {{ event.layout }}</p>
+      <p>Header: {{ event.header }}</p>
+      <p>Twitter: {{ event.twitter }}</p>
+      <p>TwitterTag: {{ event.twittertag }}</p>
+      <p>Google?: {{ event.location }}</p>
+      <p>Postcode: {{ event.postcode }}</p>
+
       <a ui-sref="event({ id: event._id })">Show</a>
       <a ng-click="events.removeEvent(event)">Delete</a>
-      <button ng-click="events.removeEvent()"></button>
     </div>
   </div>
 </section>
 
-<!-- <div ng-controller="ThemeController as theme">
+<div ng-controller="ThemeController as theme">
 
 
   <label>Show Images</label>
   <input type="checkbox" ng-model="theme.theme.show_images">
+
+
+
+
 
 
   <select ng-model="theme.event.style">
@@ -29,12 +41,7 @@
 
       <h1>Theme</h1>
 
-      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+
 
       <ul>
         <li>sdfgdsgs</li>
@@ -47,7 +54,7 @@
       </div>
 
   </div>
-</div> -->
+</div>
 
 
 
