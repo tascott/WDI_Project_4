@@ -2,13 +2,15 @@ angular
   .module('myMoments')
   .controller('EventsShowController', EventsShowController);
 
-EventsShowController.$inject = ['CurrentUser', '$stateParams', 'Event' , 'Comment', '$scope', '$sce'];
+EventsShowController.$inject = ['CurrentUser', '$stateParams', 'Event' , 'Comment', '$scope', '$sce', 'Upload'];
 
-function EventsShowController(CurrentUser, $stateParams, Event , Comment, $scope, $sce) {
+function EventsShowController(CurrentUser, $stateParams, Event , Comment, $scope, $sce, Upload) {
   var self = this;
 
   self.isOwner = false;
 
+
+  self.file = null;
 
   self.data = Event.get({id:$stateParams.id}, function() {
 
@@ -38,6 +40,24 @@ function EventsShowController(CurrentUser, $stateParams, Event , Comment, $scope
     
   });
 
+
+
+  this.uploadGallery = function() {
+    console.log("hello");
+    console.log(self.file);
+    Upload.upload({
+      url: 'http://localhost:3000/api/upload/single',
+      data: { file: self.file }
+    })
+    .then(function(res) {
+      var photo = res.data.filename;
+      self.event.uploads.push(photo);
+
+    })
+    .catch(function(err) {
+      console.error(err);
+    });
+  }
 
 
 

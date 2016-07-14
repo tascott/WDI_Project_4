@@ -29,10 +29,6 @@ function EventsController(Event, $scope, $http, CurrentUser, $stateParams, $stat
       // self.event.profilePhoto = res.data.filename;
       self.event.profilePhoto = "yyyy";
       self.event.profilePhoto = res.data.filename;
-      console.log(res.data.filename)
-      console.log(res.data);
-      console.log("Success!");
-      console.log(res);
     })
     .catch(function(err) {
       console.error(err);
@@ -40,23 +36,15 @@ function EventsController(Event, $scope, $http, CurrentUser, $stateParams, $stat
   }
 
 
-  this.uploadGallery = function() {
-    console.log(self.file);
-    Upload.upload({
-      url: 'http://localhost:3000/api/upload/single',
-      data: { file: self.file }
-    })
-    .then(function(res) {
-      // self.event.profilePhoto = res.data.filename;
-      self.event.profilePhoto = "yyyy";
-      self.event.profilePhoto = res.data.filename;
-      console.log(res.data.filename)
-      console.log(res.data);
-      console.log("Success!");
-      console.log(res);
-    })
-    .catch(function(err) {
-      console.error(err);
+
+
+ 
+  self.save = function() {
+
+    console.log(self.data);
+
+    self.data.$update(function(err , data){
+      console.log(err , data);
     });
   }
 
@@ -68,6 +56,7 @@ function EventsController(Event, $scope, $http, CurrentUser, $stateParams, $stat
    $http.post("http://localhost:3000/api/events/" , {event: self.event}, function(data) {
      console.log("success");
    });
+   $state.go('user',  { id: CurrentUser.getUser()._id} );
   }
 
  function removeEvent(event){

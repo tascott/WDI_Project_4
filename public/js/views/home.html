@@ -3,9 +3,12 @@
 <div id="splash">
   <div class="homeWrapper">
     <div id="containerText">
-      <h1> Welcome to myMoments</h1>
-      <p>Design Your Own Collaborative Event Page</p>
-      <a id="anchorID" href="#slidesHolder"><div class="arrow-down-light-blue">Get Started</div> <i id="icon1" class="icon-circle-arrow-down"></i></a>
+    <h1> myMoments</h1>
+      <h2>Design Your Own Collaborative Event Page</h2>
+      <br>
+      <br>
+      <h2 id="started">See More</h2>
+      <a id="anchorID" href="#slidesHolder"><i id="icon1" class="icon-circle-arrow-down"></i></a>
     </div>
   </div>
 </div>
@@ -25,16 +28,9 @@
       <a href="#" class="slidesjs-next slidesjs-navigation"><i class="icon-chevron-right icon-large"></i></a>
     </div>
   </div>
-  <a id="anchorID2" href="#mainBottom"><div class="arrow-down-light-blue"><i id="icon2"  class="icon-circle-arrow-down"></i></div></a>
-</div>
-
-<div id="mainBottom">
-  
-
-
-
-
-  
+  <div id="registerButton">
+    <h2 href="#" ui-sref="register">Get Started</h2>
+  </div>
 </div>
 
 <script>
@@ -46,20 +42,13 @@
   });
 
   $(document).ready(function(){
-     $("#anchorID").click(function(){
-        $('html, body').animate({
-         scrollTop: $("#slidesHolder").offset().top
-        }, 2000);
-     });
+   $("#anchorID").click(function(){
+    $('html, body').animate({
+     scrollTop: $("#slidesHolder").offset().top
+   }, 2000);
   });
+ });
 
-  $(document).ready(function(){
-     $("#anchorID2").click(function(){
-        $('html, body').animate({
-         scrollTop: $("#mainBottom").offset().top
-        }, 2000);
-     });
-  });
 
 </script>
 

@@ -2,17 +2,14 @@
   <div id="profileContainer">
     <h4>My Events</h4>
     <div ng-repeat="event in profile.user.events" class="eventTile">
-      <h6>Title: {{ event.title }}</h6>
-      <p>Description: {{ event.description }}</p>
-      <p>Photo ID: {{ event.profilePhoto }}</p>
-      <p>Colors: {{ event.bgcolor }}{{ event.scndcolor }}{{ event.thirdcolor }}</p>
+      <h3>Title: {{ event.title }}</h3>
+      <h4>Description: {{ event.description }}</h4>
 
-      <p>Layout: {{ event.layout }}</p>
-      <p>Header: {{ event.header }}</p>
-      <p>Twitter: {{ event.twitter }}</p>
-      <p>TwitterTag: {{ event.twittertag }}</p>
-      <p>Google?: {{ event.location }}</p>
-      <p>Postcode: {{ event.postcode }}</p>
+      <h5>Layout: {{ event.layout }}</h5>
+
+
+
+
 
       <a ui-sref="event({ id: event._id })">Show</a>
       <a ng-click="events.removeEvent(event)">Delete</a>

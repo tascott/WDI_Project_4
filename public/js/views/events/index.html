@@ -1,56 +1,70 @@
 <div id="wrapper" style="background-color: {{events.data.event.bgcolor}}" class="{{events.data.event.layout}}" >
+<div id="wrapper2">
 
-  <div class="layoutHeader">
-    <h1>{{ events.data.event.title }}</h1>
-    <h4>{{ events.data.event.description }}</h4>
-    <h4>.layout = {{events.data.event.layout}} </h4>
-    <h4>.postcode = {{events.data.event.postcode}} </h4>
-    <h4>.photo = {{events.data.event.profilePhoto}} </h4>
+<div class="columnhalf">
 
-    <p>Colors: {{ events.data.event.bgcolor }}{{ events.data.event.scndcolor }}{{ events.data.event.thirdcolor }}</p>
+  <div class="layoutHeader" style="background-image: url({{events.data.event.header}})">
 
-
-    <p>Header: {{ events.data.event.header }}</p>
-    <p>Twitter: {{ events.data.event.twitter }}</p>
-    <p>{{ events.data.event.twittertag }}</p>
-    <p>Google?: {{ events.data.event.location }}</p>
+  <div class="profilePhoto">
+    <img src="https://s3-eu-west-1.amazonaws.com/wdi-20-ldn-ts/{{events.data.event.profilePhoto}}">
+  </div>
 
 
-
-
-
-    <div class="profilePhoto">
-      <img src="https://s3-eu-west-1.amazonaws.com/wdi-20-ldn-ts/{{events.data.event.profilePhoto}}">
+    <div class="profileData">
+      <h1>{{ events.data.event.title }}</h1>
+      <h4>{{ events.data.event.description }}</h4>
     </div>
   </div>
 
 
-  <div class="editPanel" ng-show="events.isOwner">
+  <div class="editPanel" ng-show="events.isOwner" style="background-color: {{events.data.event.thirdcolor}}" class="{{events.data.event.scndcolor}}">
 
-    <label>Show Map</label>
+    <h2>Edit Page Design</h2>
+    <h5>(This is not visible to others)</h5>
 
-    <input type="checkbox" ng-model="events.data.event.has_map">
+    <label>Change Header Background: </label>
+    <input type="text" ng-model="events.data.event.header" placeholder="Insert URL Here">
 
-    <label>Show Comments</label>
-    <input type="checkbox" ng-model="events.data.event.has_comments">
 
-    <label>Show Gallery</label>
-    <input type="checkbox" ng-model="events.data.event.has_gallery">
+    <div class="showOptions">
+      <h4>Show:</h4>
+      <label>Map</label>
+      <input type="checkbox" ng-model="events.data.event.has_map">
+
+      <label>Comments</label>
+      <input type="checkbox" ng-model="events.data.event.has_comments">
+
+      <label>Gallery</label>
+      <input type="checkbox" ng-model="events.data.event.has_gallery">
+
+      <label>Twitter</label>
+      <input type="checkbox" ng-model="events.data.event.twitter">
+    </div>
+
+    <div class="showColors">
+      <label> Background Color </label>
+      <input type="color" value="#f5f5f5" name='bgcolor' id="event-bgcolor" placeholder="Background Color" ng-model="events.data.event.bgcolor">
+
+      <label> Secondary Color </label>
+      <input type="color" value="#f5f5f5" name='scndcolor' id="event-scndcolor" placeholder="Second color" ng-model="events.data.event.scndcolor">
+
+      <label> Third Color </label>
+      <input type="color" value="#f5f5f5" name='scndcolor' id="event-thirdcolor" placeholder="Third color" ng-model="events.data.event.thirdcolor">
+    </div>
 
     <input type="button" ng-click="events.save()" value="Save">
 
 
-  </div>
+    </div>
 
 
-
-  <div class="commentsSection" ng-show="events.data.event.has_comments">
+  <div class="commentsSection" ng-show="events.data.event.has_comments" style="background-color: {{events.data.event.scndcolor}}">
     <h3>Comments </h3>
     <ul>
       <li style = 'font-style: italic;' ng-repeat="comment in events.data.event.comments"> {{comment.name}} - "{{comment.body}}"</li>
 
     </ul>
-    <h3>Add Comments</h3>
+    <h5>Add Comments</h5>
     <form ng-submit="events.addComment()">
       <textarea ng-model="events.newComment.comment.body"></textarea>
 
@@ -60,23 +74,29 @@
   </div>
 
 
-<div class="photoGallery" ng-hide="events.data.event.has_gallery">
 
-  <h1>Gallery</h1>
-  
+</div>
 
-  <form id="new-gallery-photo" ng-submit="events.createEvent()">
+<div class="columnhalf">
 
-  <input type="file" ngf-select ng-model="events.file" name="file">Select File</input>
-  <a ng-click="events.uploadSingle()" >Upload</a>
+  <div class="photoGallery" ng-show="events.data.event.has_gallery">
+
+    <h1>Gallery</h1>
 
 
-</form>
+    <form id="new-gallery-photo" ng-submit="events.save()">
 
+      <input type="file" ngf-select ng-model="events.file" name="file">Select File</input>
+      <a ng-click="events.uploadGallery()" >Upload</a>
+
+      <input type="submit" value='Save' id="submit">
+
+
+    </form>
 
   </div>
 
-  <div id="tweetBox">
+  <div id="tweetBox" ng-show="events.data.event.twitter" style="background-color: {{events.data.event.thirdcolor}}" class="{{events.data.event.scndcolor}}">
     <h1>Twitter</h1>
     <ul>
       <li ng-repeat="tweet in events.tweets">
@@ -88,11 +108,14 @@
     </ul>
   </div>
 
-  <div id="mapHolder" ng-hide="events.data.event.has_map">
+  <div id="mapHolder" ng-show="events.data.event.has_map">
     <iframe
     frameborder="0" style="border:0"
     src="{{events.getMapSrc()}}" allowfullscreen>
   </iframe>
 </div>
 
+</div>
+
+</div>
 </div>
