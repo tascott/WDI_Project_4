@@ -16,6 +16,8 @@ function EventsShowController($stateParams, Event , Comment) {
     });
   }
 
+  self.tweets = [];
+
   self.addComment = function() {
 
     self.newComment.comment.event = self.data.event._id;
@@ -37,4 +39,12 @@ function EventsShowController($stateParams, Event , Comment) {
   socket.on('connect', function() {
     console.log('Connected!');
   });
+
+  socket.on('tweets', function(tweet) {
+    console.log(tweet)
+  })
+
+  var search_term = 'hippotree';
+
+  socket.emit('updateTerm', search_term);
 }
