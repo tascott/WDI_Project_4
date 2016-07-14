@@ -67,6 +67,14 @@
 
   <div id="tweetBox">
     <h1>Twitter</h1>
+    <ul>
+      <li ng-repeat="tweet in events.tweets">
+        <h5>{{ tweet.name }}</h5>
+        <h6>{{ tweet.screen_name }}</h6>
+        <img ng-src="{{ tweet.user_profile_image }}">
+        <p>{{ tweet.text }}</p>
+      </li>
+    </ul>
   </div>
 
   <div id="mapHolder" ng-hide="theme.theme.show_map">

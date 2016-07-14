@@ -2,12 +2,32 @@ angular
   .module('myMoments')
   .controller('EventsShowController', EventsShowController);
 
-EventsShowController.$inject = ['$stateParams', 'Event' , 'Comment'];
+EventsShowController.$inject = ['$stateParams', 'Event' , 'Comment', '$scope'];
 
-function EventsShowController($stateParams, Event , Comment) {
+function EventsShowController($stateParams, Event , Comment, $scope) {
   var self = this;
 
-  self.data = Event.get({id:$stateParams.id});
+  self.data = Event.get({id:$stateParams.id}, function() {
+
+    var socket = io();
+
+    socket.on('connect', function() {
+      
+      console.log('caaaaammmmmmoonnnnnn');
+          socket.on('tweets', function(tweet) {
+            console.log(tweet);
+          self.tweets.push(tweet);
+          $scope.$apply();
+        });
+
+        var search_term = self.data.event.twittertag;
+        socket.emit('updateTerm', search_term);
+    });
+
+    
+  });
+
+
   self.newComment = new Comment();
   self.newComment.comment = {};
   self.save = function() {
@@ -33,18 +53,4 @@ function EventsShowController($stateParams, Event , Comment) {
     });
 
   }
-
-  var socket = io();
-
-  socket.on('connect', function() {
-    console.log('Connected!');
-  });
-
-  socket.on('tweets', function(tweet) {
-    console.log(tweet)
-  })
-
-  var search_term = 'hippotree';
-
-  socket.emit('updateTerm', search_term);
 }

@@ -20,41 +20,6 @@
   </div>
 </section>
 
-<div ng-controller="ThemeController as theme">
-
-
-  <label>Show Images</label>
-  <input type="checkbox" ng-model="theme.theme.show_images">
-
-
-
-
-
-
-  <select ng-model="theme.event.style">
-    <option ng-repeat="style in theme.styles" value="{{style}}">{{style}}</option>
-  </select>
-
-  <input type="button" value="Save" ng-click="theme.save()">
-
-  <div id="wrapper" ng-class="theme.event.style">
-
-      <h1>Theme</h1>
-
-
-
-      <ul>
-        <li>sdfgdsgs</li>
-        <li>sdfasdfasd</li>
-      </ul>
-
-      <div id="images" ng-show="theme.theme.show_images">
-          <h2>Images</h2>
-
-      </div>
-
-  </div>
-</div>
 
 
 

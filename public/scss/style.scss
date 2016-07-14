@@ -1,443 +1,440 @@
-// body,html {
-
-//   height:100%;
-//   width:100%;
-//   padding:0px;
-//   margin:0px;
-// }
-
-// h1 {
-//   margin: 0;
-// }
-
-
-// /*.light {
-
-//  background-color:#EFEFEF;
-//  font-family:Arial;
-//  font-size:15px;
-
-// }
-
-// .light h1 {
-
-//   color:#AACCDD;
-
-// }
-
-// .dark {
-
-//  background-color:#AABBCC;
-//  font-family:Arial;
-//  font-size:20px;
-
-// }
-
-// .dark h1 {
-
-//   color:#FFFFAA;
-
-// }
-
-// .green {
-//   background-color: lightblue;
-//   font-family:Arial;
-//   font-size:16px;
-// }
-
-// .green h1 {
-
-//   color: red;
-
-// }
-
-// */
-
-
-// #wrapper{
-
-//   height:100%;
-//   min-height: 100vh;
-//   width:100%;
-// }
-
-
-
-// /* ************** Login/Register Styles ******************/
-
-// #login {
-//   margin-right: 100px;
-//   margin-left: 100px;
-// }
-
-
-// /* ************** Layout 1 Styles ******************/
-
-// .layout1 {
-//   background-image: url("http://4.bp.blogspot.com/-w3I5XQ1vWbg/Up6hKWsBRrI/AAAAAAAABss/I7_nbS_7wQ0/s1600/Nice+Wallpapers+(12).jpg");
-//   background-size: cover;
-//   width: 100%;
-//   padding: 0 100px;
-//   padding-top: 40px;
-
-// }
-
-
-
-// .layout1 h1 {
-//   font-size: 40px;
-//   margin: none;
-// }
-
-
-
-// /*.layout1 .box {
-//   width: 430px;
-//   border: 1px solid black;
-//   float: left;
-// }
-// */
-
-// .layout1 h3 {
-//   font-size: 20px;
-// }
-
-
-// .layout1 .layoutHeader {
-//   background-color: #F5F5F5;
-//   padding: 10px;
-//   border: 2px solid black;
-// }
-
-// .layout1 .commentsSection {
-//   border : 2px solid black;
-//   margin-top: 15px;
-//   padding: 10px;
-// }
-
-// /* ************** Layout 2 Styles ******************/
-
-
-// .layout2 h1 {
-//   font-size: 20px;
-// }
-
-
-// .layout2 div {
-//   width: 600px;
-// }
-
-// .layout2 h3 {
-//   font-size: 20px;
-// }
-
-// .layout2 {
-//   background-image: url("http://www.planwallpaper.com/static/images/518169-backgrounds.jpg");
-//   background-size: cover;
-//   width: 100%;
-// }
-
-
-
-
-// /* ************** Image Upload Styles ******************/
-
-
-
-// .media-object {
-//   max-width: 60px;
-// }
-
-// .thumb {
-//     width: 24px;
-//     height: 24px;
-//     float: none;
-//     position: relative;
-//     top: 7px;
-// }
-
-// form .progress {
-//     line-height: 15px;
-// }
-
-// .progress {
-//     display: inline-block;
-//     width: 100px;
-//     border: 3px groove #CCC;
-// }
-
-// .progress div {
-//     font-size: smaller;
-//     background: orange;
-//     width: 0;
-// }
-
-
-
-
-
-
-// /* ************** jQuery Gallery Styles ******************/
-
-// #slides {
-//   display: none
-// }
-
-// #slides .slidesjs-navigation {
-//   margin-top:3px;
-// }
-
-// #slides .slidesjs-previous {
-//   margin-right: 5px;
-//   float: left;
-// }
-
-// #slides .slidesjs-next {
-//   margin-right: 5px;
-//   float: left;
-// }
-
-// .slidesjs-pagination {
-//   margin: 6px 0 0;
-//   float: right;
-//   list-style: none;
-// }
-
-// .slidesjs-pagination li {
-//   float: left;
-//   margin: 0 1px;
-// }
-
-// .slidesjs-pagination li a {
-//   display: block;
-//   width: 13px;
-//   height: 0;
-//   padding-top: 13px;
-//   background-position: 0 0;
-//   float: left;
-//   overflow: hidden;
-// }
-
-// .slidesjs-pagination li a.active,
-// .slidesjs-pagination li a:hover.active {
-//   background-position: 0 -13px
-// }
-
-// .slidesjs-pagination li a:hover {
-//   background-position: 0 -26px
-// }
-
-// #slides a:link,
-// #slides a:visited {
-//   color: #333
-// }
-
-// #slides a:hover,
-// #slides a:active {
-//   color: #9e2020
-// }
-
-// #slides {
-//   display: none
-// }
-
-// .container {
-//   margin: 0 auto
-// }
-
-// /* For tablets & smart phones */
-// @media (max-width: 767px) {
-//   body {
-//   }
-//   .container {
-//     width: auto
-//   }
-// }
-
-// /* For smartphones */
-// @media (max-width: 480px) {
-//   .container {
-//     width: auto
-//   }
-// }
-
-// /* For smaller displays like laptops */
-// @media (min-width: 768px) and (max-width: 979px) {
-//   .container {
-//     width: 724px
-//   }
-// }
-
-// /* For larger displays */
-// @media (min-width: 1200px) {
-//   .container {
-//     width: 1170px
-//   }
-// }
-
-// /* ************** navbar overriding defaults ******************/
-
-
-
-// .navbar {
-//     margin-bottom: 0 !important;
-// }
-
-
-// .navbar-default {
-//     border:none;
-//     color: white;
-// }
-
-
-// .navbar .nav > li > a {
-//     float: none;
-//     line-height: 19px;
-//     padding: 9px 10px 11px;
-//     text-decoration: none;
-//     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-//     color:  black;
-// }
-
-
-// .navbar-default .navbar-brand {
-//     color: black;
-// }
-
-// .navbar-home {
-
-//   background-color: transparent;
-//   background-image: none;
-
-// }
-
-// .navbar-home .nav > li > a {
-//     float: none;
-//     line-height: 19px;
-//     padding: 9px 10px 11px;
-//     text-decoration: none;
-//     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-//     color:  white;
-// }
-
-
-// .navbar-home .nav > li > a:hover {
-//     color:  lightgrey;
-// }
-
-// .navbar-home .navbar-brand {
-//     color: white;
-// }
-
-
-// /* ************** "home" text and styles/events ******************/
-
-
-
-
-// #splash {
-//   height: 100vh;
-//   width: 100%;
-//   background-image: url("../assets/images/splash1.jpg");
-//   background-size: cover;
-//   background-position: center center;
-//   background-repeat: no-repeat;
-//   margin-top: -70px;
-// }
-
-
-// #splash h1 {
-//   margin: none;
-//   padding: none;
-// }
-
-
-
-// .homeWrapper {
-//   height: 100%;
-//   width: 100%;
-  
-//    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.8+19,0.01+74,0.01+97,0.01+97 */
-//    background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.8) 19%, rgba(0,0,0,0.01) 74%, rgba(0,0,0,0.01) 97%, rgba(0,0,0,0.01) 100%); /* FF3.6-15 */
-//    background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.8) 19%,rgba(0,0,0,0.01) 74%,rgba(0,0,0,0.01) 97%,rgba(0,0,0,0.01) 100%); /* Chrome10-25,Safari5.1-6 */
-//    background: radial-gradient(ellipse at center, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.8) 19%,rgba(0,0,0,0.01) 74%,rgba(0,0,0,0.01) 97%,rgba(0,0,0,0.01) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-//    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', endColorstr='#03000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-//   }
-
-
-// #containerText {
-//   position: relative;
-//   top: 50%;
-//   transform: translateY(-50%);
-//   padding-left: 5%;
-//   text-align: center;
-// }
-
-// #containerText {
-//   /*color: #f2f2f2;*/
-//   color: white;
-// }
-
-// #slidesHolder {
-//   text-align: center;
-//   height: 100vh;
-
-// }
-
-// #slidesHolder h2 {
-//   color: black;
-//   padding: 40px;
-// }
-
-// #slides {
-//   width: 50%;
-//   margin: 0 auto;
-// }
-
-// #mainBottom {
-//   height: 100vh;
-//   width: 100%;
-//  border-top: 1px solid lightblue;
-// }
-
-// .icon-circle-arrow-down {
-//   font-size: 55px;
-//   color: grey;
-//   margin-top: 100px;
-// }
-// #icon2 {
-
-//   font-color: black;
-
-// }
-
-// /* ************** profile page ******************/
-
-
-// #profileContainer {
-//   color: black;
-//   padding: 50px;
-//   overflow: auto;
-//   text-align: center;
-// }
-
-// .eventTile {
-//   min-width: 300px;
-//   width: 31%;
-//   background-color: lightgrey;
-//   float:left;
-//   margin: 10px;
-//   padding: 10px;
-//   overflow: auto;
-// }
-
-
-// #profileformholder {
-//   margin: 50px;
-// }
-
-body {
-  background: green;
+body, html {
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+h1 {
+  margin: 0;
 }
 
 
+#neweventpage {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.editPanel {
+  width: 100%;
+  height: 80px;
+  border: 3px solid blue;
+}
+
+#tweetBox {
+  width: 100%;
+  height: 600px;
+  border: 3px solid blue;
+}
+
+
+.photoGallery {
+  width: 100%;
+  height: 80px;
+  border: 3px solid red;
+}
+
+/*.light {
+
+ background-color:#EFEFEF;
+ font-family:Arial;
+ font-size:15px;
+
+}
+
+.light h1 {
+
+  color:#AACCDD;
+
+}
+
+.dark {
+
+ background-color:#AABBCC;
+ font-family:Arial;
+ font-size:20px;
+
+}
+
+.dark h1 {
+
+  color:#FFFFAA;
+
+}
+
+.green {
+  background-color: lightblue;
+  font-family:Arial;
+  font-size:16px;
+}
+
+.green h1 {
+
+  color: red;
+
+}
+
+*/
+
+textarea {
+  width: 100%;
+}
+
+#wrapper {
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ************** Login/Register Styles ******************/
+#login {
+  margin-right: 100px;
+  margin-left: 100px;
+}
+
+/* ************** Layout 1 Styles ******************/
+.layout1 {
+  background-image: url("http://4.bp.blogspot.com/-w3I5XQ1vWbg/Up6hKWsBRrI/AAAAAAAABss/I7_nbS_7wQ0/s1600/Nice+Wallpapers+(12).jpg");
+  background-size: cover;
+  width: 100%;
+  padding: 0 100px;
+  padding-top: 40px;
+}
+
+.layout1 h1 {
+  font-size: 40px;
+  margin: none;
+}
+
+.layout1 #mapHolder {
+  border: 3px solid black;
+}
+
+
+.layout1 iframe {
+  width: 100%;
+  height: 300px;
+  border: 1px solid black;
+}
+
+
+
+/*.layout1 .box {
+  width: 430px;
+  border: 1px solid black;
+  float: left;
+}
+*/
+
+.layout1 h3 {
+  font-size: 20px;
+}
+
+.layout1 .layoutHeader {
+  background-color: #F5F5F5;
+  padding: 10px;
+  border: 2px solid black;
+}
+
+.layout1 .commentsSection {
+  border: 2px solid black;
+  margin-top: 15px;
+  padding: 10px;
+  background-color: lightgrey;
+}
+
+.layout1 .profilePhoto {
+  border: 3px solid red;
+  height: 300px;
+  width: 300px;
+}
+
+
+.profilePhoto img {
+  height: 100%;
+  width: 100%;
+}
+
+/* ************** Layout 2 Styles ******************/
+.layout2 h1 {
+  font-size: 20px;
+}
+
+.layout2 div {
+  width: 600px;
+}
+
+.layout2 h3 {
+  font-size: 20px;
+}
+
+.layout2 {
+  background-image: url("http://www.planwallpaper.com/static/images/518169-backgrounds.jpg");
+  background-size: cover;
+  width: 100%;
+}
+
+/* ************** Image Upload Styles ******************/
+.media-object {
+  max-width: 60px;
+}
+
+.thumb {
+  width: 24px;
+  height: 24px;
+  float: none;
+  position: relative;
+  top: 7px;
+}
+
+form .progress {
+  line-height: 15px;
+}
+
+.progress {
+  display: inline-block;
+  width: 100px;
+  border: 3px groove #CCC;
+}
+
+.progress div {
+  font-size: smaller;
+  background: orange;
+  width: 0;
+}
+
+/* ************** jQuery Gallery Styles ******************/
+#slides {
+  display: none;
+}
+
+#slides .slidesjs-navigation {
+  margin-top: 3px;
+}
+
+#slides .slidesjs-previous {
+  margin-right: 5px;
+  float: left;
+}
+
+#slides .slidesjs-next {
+  margin-right: 5px;
+  float: left;
+}
+
+.slidesjs-pagination {
+  margin: 6px 0 0;
+  float: right;
+  list-style: none;
+}
+
+.slidesjs-pagination li {
+  float: left;
+  margin: 0 1px;
+}
+
+.slidesjs-pagination li a {
+  display: block;
+  width: 13px;
+  height: 0;
+  padding-top: 13px;
+  background-position: 0 0;
+  float: left;
+  overflow: hidden;
+}
+
+.slidesjs-pagination li a.active,
+.slidesjs-pagination li a:hover.active {
+  background-position: 0 -13px;
+}
+
+.slidesjs-pagination li a:hover {
+  background-position: 0 -26px;
+}
+
+#slides a:link,
+#slides a:visited {
+  color: #333;
+}
+
+#slides a:hover,
+#slides a:active {
+  color: #9e2020;
+}
+
+#slides {
+  display: none;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+/* For tablets & smart phones */
+@media (max-width: 767px) {
+  .container {
+    width: auto;
+  }
+}
+
+/* For smartphones */
+@media (max-width: 480px) {
+  .container {
+    width: auto;
+  }
+}
+
+/* For smaller displays like laptops */
+@media (min-width: 768px) and (max-width: 979px) {
+  .container {
+    width: 724px;
+  }
+}
+
+/* For larger displays */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* ************** navbar overriding defaults ******************/
+.navbar {
+  margin-bottom: 0 !important;
+}
+
+.navbar-default {
+  border: none;
+  color: white;
+}
+
+.navbar .nav > li > a {
+  float: none;
+  line-height: 19px;
+  padding: 9px 10px 11px;
+  text-decoration: none;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  color: black;
+}
+
+.navbar-default .navbar-brand {
+  color: black;
+}
+
+.navbar-home {
+  background-color: transparent;
+  background-image: none;
+}
+
+.navbar-home .nav > li > a {
+  float: none;
+  line-height: 19px;
+  padding: 9px 10px 11px;
+  text-decoration: none;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  color: white;
+}
+
+.navbar-home .nav > li > a:hover {
+  color: lightgrey;
+}
+
+.navbar-home .navbar-brand {
+  color: white;
+}
+
+/* ************** "home" text and styles/events ******************/
+#splash {
+  height: 100vh;
+  width: 100%;
+  background-image: url("../assets/images/splash1.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin-top: -70px;
+}
+
+#splash h1 {
+  margin: none;
+  padding: none;
+}
+
+.homeWrapper {
+  height: 100%;
+  width: 100%;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.8+19,0.01+74,0.01+97,0.01+97 */
+  background: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 19%, rgba(0, 0, 0, 0.01) 74%, rgba(0, 0, 0, 0.01) 97%, rgba(0, 0, 0, 0.01) 100%);
+  /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 19%, rgba(0, 0, 0, 0.01) 74%, rgba(0, 0, 0, 0.01) 97%, rgba(0, 0, 0, 0.01) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 19%, rgba(0, 0, 0, 0.01) 74%, rgba(0, 0, 0, 0.01) 97%, rgba(0, 0, 0, 0.01) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', endColorstr='#03000000',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */
+}
+
+#containerText {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 5%;
+  text-align: center;
+}
+
+#containerText {
+  /*color: #f2f2f2;*/
+  color: white;
+}
+
+#slidesHolder {
+  text-align: center;
+  height: 100vh;
+}
+
+#slidesHolder h2 {
+  color: black;
+  padding: 40px;
+}
+
+#slides {
+  width: 50%;
+  margin: 0 auto;
+}
+
+#mainBottom {
+  height: 100vh;
+  width: 100%;
+  border-top: 1px solid lightblue;
+}
+
+.icon-circle-arrow-down {
+  font-size: 55px;
+  color: grey;
+  margin-top: 100px;
+}
+
+#icon2 {
+  font-color: black;
+}
+
+/* ************** profile page ******************/
+#profileContainer {
+  color: black;
+  padding: 50px;
+  overflow: auto;
+  text-align: center;
+}
+
+.eventTile {
+  min-width: 300px;
+  width: 31%;
+  background-color: lightgrey;
+  float: left;
+  margin: 10px;
+  padding: 10px;
+  overflow: auto;
+}
+
+#profileformholder {
+  margin: 50px;
+}
