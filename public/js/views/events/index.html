@@ -25,23 +25,26 @@
   </div>
 
 
-  <div class="editPanel">
+  <div class="editPanel" ng-show="events.isOwner">
 
     <label>Show Map</label>
-    <input type="checkbox" ng-model="theme.theme.show_map">
+
+    <input type="checkbox" ng-model="events.data.event.has_map">
 
     <label>Show Comments</label>
-    <input type="checkbox" ng-model="theme.theme.show_comments">
+    <input type="checkbox" ng-model="events.data.event.has_comments">
 
     <label>Show Gallery</label>
-    <input type="checkbox" ng-model="theme.theme.show_gallery">
+    <input type="checkbox" ng-model="events.data.event.has_gallery">
+
+    <input type="button" ng-click="events.save()" value="Save">
 
 
   </div>
 
 
 
-  <div class="commentsSection" ng-hide="theme.theme.show_comments">
+  <div class="commentsSection" ng-show="events.data.event.has_comments">
     <h3>Comments </h3>
     <ul>
       <li style = 'font-style: italic;' ng-repeat="comment in events.data.event.comments"> {{comment.name}} - "{{comment.body}}"</li>
@@ -57,10 +60,18 @@
   </div>
 
 
-  <div class="photoGallery" ng-hide="theme.theme.show_gallery">
+<div class="photoGallery" ng-hide="events.data.event.has_gallery">
 
-    <h1>Gallery</h1>
+  <h1>Gallery</h1>
+  
 
+  <form id="new-gallery-photo" ng-submit="events.createEvent()">
+
+  <input type="file" ngf-select ng-model="events.file" name="file">Select File</input>
+  <a ng-click="events.uploadSingle()" >Upload</a>
+
+
+</form>
 
 
   </div>
@@ -71,16 +82,16 @@
       <li ng-repeat="tweet in events.tweets">
         <h5>{{ tweet.name }}</h5>
         <h6>{{ tweet.screen_name }}</h6>
-        <img ng-src="{{ tweet.user_profile_image }}">
+        <img class="twitImage" ng-src="{{ tweet.user_profile_image }}">
         <p>{{ tweet.text }}</p>
       </li>
     </ul>
   </div>
 
-  <div id="mapHolder" ng-hide="theme.theme.show_map">
+  <div id="mapHolder" ng-hide="events.data.event.has_map">
     <iframe
     frameborder="0" style="border:0"
-    src="https://www.google.com/maps/embed/v1/search?key=AIzaSyD_Dhg3DEYXMLnwyV1uoQlC8UyO2nWght8&q=nw26hb" allowfullscreen>
+    src="{{events.getMapSrc()}}" allowfullscreen>
   </iframe>
 </div>
 

@@ -40,6 +40,27 @@ function EventsController(Event, $scope, $http, CurrentUser, $stateParams, $stat
   }
 
 
+  this.uploadGallery = function() {
+    console.log(self.file);
+    Upload.upload({
+      url: 'http://localhost:3000/api/upload/single',
+      data: { file: self.file }
+    })
+    .then(function(res) {
+      // self.event.profilePhoto = res.data.filename;
+      self.event.profilePhoto = "yyyy";
+      self.event.profilePhoto = res.data.filename;
+      console.log(res.data.filename)
+      console.log(res.data);
+      console.log("Success!");
+      console.log(res);
+    })
+    .catch(function(err) {
+      console.error(err);
+    });
+  }
+
+
   function createEvent(){
    self.currentUser  = CurrentUser.getUser();
    self.event.user   = self.currentUser._id;

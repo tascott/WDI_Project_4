@@ -15,6 +15,9 @@ var eventSchema = mongoose.Schema({
   twittertag: String,
   location: Boolean,
   postcode: String,
+  has_map: Boolean,
+  has_gallery: Boolean,
+  has_comments: Boolean,
 
 
   uploads: Array,

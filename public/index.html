@@ -63,6 +63,9 @@
               <a href="#" ui-sref="users">Users</a>
             </li> -->
             <li ng-show="users.checkLoggedIn()">
+              <a href="#" ui-sref="user({ id: users.currentUser._id })">Welcome, {{users.currentUser.local.username}}</a>
+            </li>
+            <li ng-show="users.checkLoggedIn()">
               <a href="#" ui-sref="user({ id: users.currentUser._id })">Profile</a>
             </li>
             <li ng-show="users.checkLoggedIn()">

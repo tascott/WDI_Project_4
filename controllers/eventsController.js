@@ -47,7 +47,7 @@ function showEvent(event){
 
 function eventsUpdate(req, res){
   var id = req.params.id;
-
+  console.log(req.body.event);
   Event.findByIdAndUpdate({ _id: id }, req.body.event, {new: true}).populate('comments').exec(function(err, event){
     if (err) {
       console.log(err);
