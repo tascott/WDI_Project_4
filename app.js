@@ -23,7 +23,7 @@ var sass           = require('node-sass');
 
 
 mongoose.connect(config.database);
-
+ 
 require('./config/passport')(passport);
 
 
