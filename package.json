@@ -7,7 +7,7 @@
       "node": "5.11.0"
   },
   "scripts": {
-    "start": "node app.js"
+    "start": "app.js"
   },
   "author": "",
   "license": "ISC",
