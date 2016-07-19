@@ -10,7 +10,6 @@ var methodOverride = require("method-override");
 var jwt            = require('jsonwebtoken');
 var expressJWT     = require('express-jwt');
 var server         = require('http').createServer(app);
-// var Twitter        = require('twitter');
 var multer         = require('multer');
 var s3             = require('multer-s3');
 var morgan         = require('morgan');
@@ -23,7 +22,7 @@ var sass           = require('node-sass');
 
 
 // mongoose.connect(config.database);
-var databaseURL    = 'mongodb://localhost:27017/myMoments';
+var databaseURL    = 'mongodb://localhost/myMoments';
 mongoose.connect(process.env.MONGODB_URI || databaseURL);
  
 require('./config/passport')(passport);
