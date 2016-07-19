@@ -10,7 +10,7 @@ var methodOverride = require("method-override");
 var jwt            = require('jsonwebtoken');
 var expressJWT     = require('express-jwt');
 var server         = require('http').createServer(app);
-// var Twitter        = require('twitter');
+var Twitter        = require('twitter');
 var multer         = require('multer');
 var s3             = require('multer-s3');
 var morgan         = require('morgan');
@@ -19,11 +19,11 @@ var app            = express();
 var config         = require('./config/config');
 var User           = require('./models/user');
 var secret         = require('./config/config').secret;
-// var sass           = require('node-sass');
+var sass           = require('node-sass');
 
 
 // mongoose.connect(config.database);
-var databaseURL    = 'mongodb://localhost/myMoments';
+var databaseURL    = 'mongodb://localhost:27017/myMoments';
 mongoose.connect(process.env.MONGODB_URI || databaseURL);
  
 require('./config/passport')(passport);

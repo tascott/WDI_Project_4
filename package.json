@@ -5,7 +5,8 @@
   "main": "app.js",
   "engines": {
       "node": "5.11.0",
-      "npm": "3.8.6"
+      "npm": "3.8.6",
+      "postinstall": "./node_modules/bower/bin/bower install"
   },
   "scripts": {
     "start": "node app.js"
@@ -16,6 +17,7 @@
     "aws-sdk": "^2.4.6",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "~1.0.0",
+    "bower": "^1.7.9",
     "cookie-parser": "^1.0.1",
     "cors": "^2.7.1",
     "express": "~4.0.0",
