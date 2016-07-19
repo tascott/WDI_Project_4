@@ -19,7 +19,7 @@ var app            = express();
 var config         = require('./config/config');
 var User           = require('./models/user');
 var secret         = require('./config/config').secret;
-var sass           = require('node-sass');
+// var sass           = require('node-sass');
 
 
 // mongoose.connect(config.database);

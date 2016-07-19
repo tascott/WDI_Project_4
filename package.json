@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "engines": {
+      "node": "5.11.0",
+      "npm": "3.8.6"
+  },
   "scripts": {
     "start": "node app.js"
   },
@@ -28,5 +32,14 @@
     "twit": "^2.2.4",
     "uuid": "^2.0.2",
     "validator": "^5.2.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^1.2.0",
+    "load-grunt-tasks": "^3.5.0"
   }
 }
