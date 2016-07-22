@@ -22,8 +22,9 @@ var sass           = require('node-sass');
 
 
 // mongoose.connect(config.database);
-var databaseURL    = 'mongodb://localhost:3000/myMoments';
-mongoose.connect(process.env.MONGODB_URI || databaseURL);
+// var databaseURL    = 'mongodb://localhost:3000/myMoments';
+// mongoose.connect(process.env.MONGODB_URI || databaseURL);
+mongoose.connect(config.database);
  
 require('./config/passport')(passport);
 
