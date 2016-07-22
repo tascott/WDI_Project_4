@@ -22,7 +22,7 @@ function EventsController(Event, $scope, $http, CurrentUser, $stateParams, $stat
   this.uploadSingle = function() {
     console.log(self.file);
     Upload.upload({
-      url: 'http://localhost:3000/api/upload/single',
+      url: 'api/upload/single',
       data: { file: self.file }
     })
     .then(function(res) {
