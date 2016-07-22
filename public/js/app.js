@@ -1,7 +1,7 @@
 angular
   .module('myMoments', ['ngResource', 'angular-jwt', 'ui.router', 'ngFileUpload'])
-  .constant('API', 'https://localhost:3000/api')
-  .constant('API_URL', 'https://localhost:3000')
+  // .constant('API', 'https://localhost:3000/api')
+  .constant('API', '/api')
   .config(MainRouter)
   .config(function($httpProvider){
     $httpProvider.interceptors.push('authInterceptor');
