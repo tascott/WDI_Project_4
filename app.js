@@ -107,7 +107,7 @@ var upload = multer({
 var routes = require('./config/routes');
 app.use("/api", routes);
 
-// This will upload a single file.
+// This will upload a single file...
 app.post('/api/upload/single', upload.single('file'), function(req, res) {
   res.status(200).json({ filename: req.file.key });
 });
