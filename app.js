@@ -55,8 +55,9 @@ app.use(passport.initialize());
 //       { url: '/api/login', methods: ['POST'] },
 //       { url: '/api/register', methods: ['POST'] }
 //     ]
-//   }));
+//   }))
 
+//
 
 
 app.use(function (err, req, res, next) {
