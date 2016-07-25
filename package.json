@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "engines": {
-      "node": "5.11.0"  
+    "node": "5.11.0"
   },
   "scripts": {
     "start": "node app.js",
@@ -24,6 +24,7 @@
     "jsonwebtoken": "^5.0.5",
     "method-override": "^1.0.2",
     "mongoose": "4.1.1",
+    "mongoose-seed": "^0.2.0",
     "morgan": "~1.0.0",
     "multer": "^1.1.0",
     "multer-s3": "^2.3.2",
