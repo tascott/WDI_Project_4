@@ -2,6 +2,14 @@
 
 myMoments is a web application designed to help users share content related to a specific event, like a birthday or wedding. An event creator can customise the design of their event page, and guests can help contribute to the content.
 
+###Built With...
+
+- AngularJS, JavaScript, jQuery and SASS Front End
+- Passport authentication
+- MongoDB Database
+- Express & NodeJS
+- Plugins including Amazon Web Storage for photo uploads, JWT for web authentication, Sockets.io for Twitter
+
 
 ###Admin/Event Creators Can..
 
@@ -16,17 +24,6 @@ myMoments is a web application designed to help users share content related to a
 - Comment on a page, effectively adding to a guestbook.
 - Upload images for a gallery (coming soon).
 - Tweet with the pre-chosen hashtag and this will apepar live on the page.
-
-
-#Main Features
-
-###Built With...
-
-- AngularJS, JavaScript, jQuery and SASS Front End
-- Passport authentication
-- MongoDB Database
-- Express & NodeJS
-- Plugins including Amazon Web Storage for photo uploads, JWT for web authentication, Sockets.io for Twitter
 
 
 ### Screens
