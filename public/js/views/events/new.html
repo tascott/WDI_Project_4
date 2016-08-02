@@ -80,12 +80,110 @@
 
     <input type="submit" value='Save and Go' id="submit">
 
+    <div id="cardholder">
+
+      <div id="card-1" class="card">
+        <div class="front">
+          MEAN Stack</br>
+          <img src="../../assets/images/flip.png" class="flip">
+        </div>
+        <div class="back">
+          <ul>
+            <li> MongoDB </li>
+            
+          </ul>
+        </div>
+      </div>
+
+
+      <div id="card-2" class="card">
+        <div class="front">
+          Front-End</br>
+          <img src="../../assets/images/flip.png" class="flip">
+        </div>
+        <div class="back">
+          <ul>
+            <li> Javascript </li>
+            
+          </ul>
+        </div> 
+      </div>
+
+
+
+      <div class="card">
+        <div class="front">
+          Back End</br>
+          <img src="../../assets/images/flip.png" class="flip">
+        </div>
+        <div class="back">
+          <ul>
+            <li>NoSql</li>
+            
+          </ul>
+        </div> 
+      </div>
+
+
+      <div class="card">
+        <div class="front">
+          Ruby </br>
+          <img src="../../assets/images/flip.png" class="flip">
+        </div>
+        <div style="background-image: url('../../assets/images/twocol.png'); background-size: cover" class="back">
+          <ul>
+            <li> Two Column</li>
+            
+
+          </ul>
+        </div> 
+      </div>
+
+      <div class="card">
+        <div class="front">
+          Frameworks</br>
+          <img src="../../assets/images/flip.png" class="flip">
+        </div>
+        <div class="back">
+          <ul>
+            <li>Bootstrap</li>
+            
+          </ul>
+        </div> 
+      </div>
+
+
+
+
+      <div class="card">
+        <div class="front">
+          Work</br>
+          <img src="../../assets/images/flip.png" class="flip">
+        </div>
+        <div class="back">
+          <ul>
+            <li>TDD & BDD</li>
+          </ul>
+        </div> 
+      </div>
+
+
+    </div>
 
 
   </form> 
 
 
 </div>
+
+<script type="text/javascript">
+  $(function(){
+    $(".card").flip({
+      axis: 'x',
+      trigger: 'click'
+    });
+  });
+</script>
 
 
 

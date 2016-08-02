@@ -3,13 +3,18 @@
 <div id="splash">
   <div class="homeWrapper">
     <div id="containerText">
-    <h1> myMoments</h1>
-      <h2>Design Your Own Collaborative Event Page</h2>
-      <br>
-      <br>
-      <h2 id="started">See More</h2>
-      <a id="anchorID" href="#slidesHolder"><i id="icon1" class="icon-circle-arrow-down"></i></a>
+      <h1> myMoments</h1>
+      <h3>Design Your Own Collaborative Event Page</h3>
     </div>
+
+
+
+    <div id="containerText2">
+      <h4 id="started">See More</h4>
+      <a id="anchorID" href="#slidesHolder"><i id="icon1" style="margin: 0px; padding: 0px;" class="icon-circle-arrow-down"></i></a>
+    </div>
+
+
   </div>
 </div>
 
@@ -17,7 +22,7 @@
 
   <h2> How It Works </h2>
 
-  <div class="container">
+  <div class="container3">
     <div id="slides">
       <img src="../assets/images/HIW1.jpg" >
       <img src="../assets/images/HIW2.jpg" >
@@ -28,9 +33,24 @@
       <a href="#" class="slidesjs-next slidesjs-navigation"><i class="icon-chevron-right icon-large"></i></a>
     </div>
   </div>
+
   <div id="registerButton">
-    <h2 href="#" ui-sref="register">Get Started</h2>
+
+    <h2 style="cursor: pointer;" ng-show="users.checkLoggedIn()" href="#" ui-sref="event-new">Create an event, {{users.currentUser.local.username}}!</h2>
+
+
+
+    <h2 style="cursor: pointer;" ng-hide="users.checkLoggedIn()" href="#" ui-sref="register">Register</h2>
   </div>
+
+</div>
+
+<div class="footer">
+ <div class="social">
+  <a href="#" class="icon-button twitter"><i class="icon-twitter"></i><span></span></a>
+  <a href="#" class="icon-button facebook"><i class="icon-facebook"></i><span></span></a>
+  <a href="#" class="icon-button google-plus"><i class="icon-google-plus"></i><span></span></a>
+</div>
 </div>
 
 <script>
