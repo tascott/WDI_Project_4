@@ -12,11 +12,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
   <script type="text/javascript" src="https://cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-resource.min.js"></script>
-  
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
   <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
-
   <script src="/socket.io/socket.io.js"></script>
 
   <!-- Internal Files -->
@@ -32,6 +29,8 @@
   <script src="./js/controllers/eventsShowController.js"></script>
   <script src="./js/controllers/commentsController.js"></script>
   <script src="./js/controllers/commentsShowController.js"></script>
+  <script src="./js/spectrum.js"></script>
+
   <script src="./bower_components/ng-file-upload/ng-file-upload.js"></script>
  
   <!-- Stylesheets -->
@@ -39,7 +38,7 @@
  <!--  <link rel="stylesheet" type="text/css" href="./css/example.css"> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="./css/style.css">
-  <link rel="stylesheet" type="text/css" href="./css/layouts.css">
+  <link rel="stylesheet" type="text/css" href="./css/spectrum.css">
   <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300' rel='stylesheet' type='text/css'>
   
 </head>
@@ -68,7 +67,7 @@
               <a href="#" ui-sref="user({ id: users.currentUser._id })">Welcome, {{users.currentUser.local.username}}</a>
             </li>
             <li ng-show="users.checkLoggedIn()">
-              <a href="#" ui-sref="user({ id: users.currentUser._id })">Profile</a>
+              <a href="#" ui-sref="user({ id: users.currentUser._id })">My Events</a>
             </li>
             <li ng-show="users.checkLoggedIn()">
               <a href="#" ui-sref="event-new">New Event</a>

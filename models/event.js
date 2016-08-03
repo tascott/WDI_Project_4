@@ -5,7 +5,7 @@ var eventSchema = mongoose.Schema({
   description: String,
   profilePhoto: String,
 
-  bgcolor: String,
+  bgcolor: { type: String, default: 'lightblue' },
   scndcolor: String,
   thirdcolor: String,
 

@@ -1,17 +1,26 @@
 <div id="neweventpage">
 
-
+<div id="eventtitle" class="eventquad eventsmall">
+<h2>Create Your Event</h2>
+</div>
 
   <form id="new-event" ng-submit="events.createEvent()">
 
-    <h2>Create Your Event</h2>
+  <div class="twoholder">
+
+    <div id="particulars" class="eventquad eventsmall">
+    <h2 style="margin: 5px;">Particulars</h2>
+
     <input type="text" name='title' id="event-title" placeholder="Title" ng-model="events.event.title">
     <br>
     <br>
     <textarea name='description' id="event-description" placeholder="Description" ng-model="events.event.description"></textarea>
 
-    <br>
-    <br>
+    </div>
+
+    
+
+    <div id="additions" class="eventquad eventsmall">
 
     <label> Include Twitter? </label>
     <select ng-model="events.event.twitter">
@@ -33,11 +42,16 @@
     <label> If yes, input the postcode here: </label>
     <input type="text" name='postcode' id="event-postcode" placeholder="Postcode" ng-model="events.event.postcode">
 
+    </div>
 
-    <br><br>
+    </div>
+
+    <div class="clear"></div>
+
+    <div id="colours" class="eventquad">
 
     <label> Background Color </label>
-    <input type="color" value="#f5f5f5" name='bgcolor' id="event-bgcolor" placeholder="Background Color" ng-model="events.event.bgcolor">
+    <input type="color" value="#ff0000" name='bgcolor' id="event-bgcolor" placeholder="Background Color" ng-model="events.event.bgcolor">
 
     <label> Secondary Color </label>
     <input type="color" value="#f5f5f5" name='scndcolor' id="event-scndcolor" placeholder="Second color" ng-model="events.event.scndcolor">
@@ -45,67 +59,35 @@
     <label> Third Color </label>
     <input type="color" value="#f5f5f5" name='scndcolor' id="event-thirdcolor" placeholder="Third color" ng-model="events.event.thirdcolor">
 
-    <br><br>
-    Layout Examples
-    <div id="formImages">
-      <img class="formImage" src="../../assets/images/twocol.png">
-      <img class="formImage" src="../../assets/images/Vertical.png">
-      <img class="formImage" src="../../assets/images/grid.png">
-      <img class="formImage" src="../../assets/images/fullwidth.png">
-      <img class="formImage" src="../../assets/images/twocol.png">
+ 
+ <input type='text' id="custom" />
+
+
     </div>
 
-    <br><br>
+    <div id="layoutchoices" class="eventquad">
 
-    <label> Layout </label>
-    <select ng-model="events.event.layout">
-      <option ng-model="events.event.layout" value="layout1">Narrow</option>
-      <option ng-model="events.event.layout" value="layout2">Full Width/Long</option>
-      <option ng-model="events.event.layout" value="layout3">Vertical</option>
-      <option ng-model="events.event.layout" value="layout4">Grid</option>
-      <option ng-model="events.event.layout" value="layout6">Two Column</option>
-    </select>
-
-    <br><br>
-    <h4>Upload an Event Profile Photo</h4>
-    <input type="file" ngf-select ng-model="events.file" name="file" style="padding-left: 30px"></input>
-
-    <a ng-click="events.uploadSingle()" >Upload</a>
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <input type="submit" value='Save and Go' id="submit">
-
+    Layout Examples
     <div id="cardholder">
 
       <div id="card-1" class="card">
         <div class="front">
-          MEAN Stack</br>
+          Narrow</br>
           <img src="../../assets/images/flip.png" class="flip">
         </div>
-        <div class="back">
-          <ul>
-            <li> MongoDB </li>
-            
-          </ul>
+        <div style="background-image: url('../../assets/images/narrow.png')" class="flipimage back">
+        
         </div>
       </div>
 
 
       <div id="card-2" class="card">
         <div class="front">
-          Front-End</br>
+          Full Width</br>
           <img src="../../assets/images/flip.png" class="flip">
         </div>
-        <div class="back">
-          <ul>
-            <li> Javascript </li>
-            
-          </ul>
+        <div style="background-image: url('../../assets/images/fullwidth.png')" class="flipimage back">
+          
         </div> 
       </div>
 
@@ -113,60 +95,61 @@
 
       <div class="card">
         <div class="front">
-          Back End</br>
+          Vertical</br>
           <img src="../../assets/images/flip.png" class="flip">
         </div>
-        <div class="back">
-          <ul>
-            <li>NoSql</li>
-            
-          </ul>
-        </div> 
-      </div>
-
-
-      <div class="card">
-        <div class="front">
-          Ruby </br>
-          <img src="../../assets/images/flip.png" class="flip">
-        </div>
-        <div style="background-image: url('../../assets/images/twocol.png'); background-size: cover" class="back">
-          <ul>
-            <li> Two Column</li>
-            
-
-          </ul>
+        <div style="background-image: url('../../assets/images/Vertical.png')" class="flipimage back">
+          
         </div> 
       </div>
 
       <div class="card">
         <div class="front">
-          Frameworks</br>
+          Grid</br>
           <img src="../../assets/images/flip.png" class="flip">
         </div>
-        <div class="back">
-          <ul>
-            <li>Bootstrap</li>
-            
-          </ul>
+        <div style="background-image: url('../../assets/images/grid.png')" class="flipimage back">
+          
         </div> 
       </div>
 
 
+     <div id="card-1" class="card">
+       <div class="front">
+         Two Column</br>
+         <img src="../../assets/images/flip.png" class="flip">
+       </div>
+       <div style="background-image: url('../../assets/images/twocol.png')" class="flipimage back">
+       
+       </div>
+     </div>
 
+    </div>
 
-      <div class="card">
-        <div class="front">
-          Work</br>
-          <img src="../../assets/images/flip.png" class="flip">
-        </div>
-        <div class="back">
-          <ul>
-            <li>TDD & BDD</li>
-          </ul>
-        </div> 
-      </div>
+    <label> Choose Layout </label>
+    <select ng-model="events.event.layout">
+      <option ng-model="events.event.layout" value="layout1">Narrow</option>
+      <option ng-model="events.event.layout" value="layout2">Full Width</option>
+      <option ng-model="events.event.layout" value="layout3">Vertical</option>
+      <option ng-model="events.event.layout" value="layout4">Grid</option>
+      <option ng-model="events.event.layout" value="layout6">Two Column</option>
+    </select>
 
+    </div>
+    
+
+    <div id="profileupload" class="eventquad eventsmall">
+
+    <h4>Upload an Event Profile Photo</h4>
+    <input type="file" ngf-select ng-model="events.file" name="file" style="padding-left: 30px"></input>
+
+    <a ng-click="events.uploadSingle()" >Upload</a>
+
+    </div>
+
+    <div class="eventquad eventsmall">
+    <h3>Save Your Event!</h3>
+    <input type="submit" value='Save and Go' id="submit">
 
     </div>
 
@@ -176,6 +159,8 @@
 
 </div>
 
+
+
 <script type="text/javascript">
   $(function(){
     $(".card").flip({
@@ -183,6 +168,13 @@
       trigger: 'click'
     });
   });
+</script>
+
+
+<script>
+$("#custom").spectrum({
+    color: "#f00"
+});
 </script>
 
 
