@@ -10,7 +10,7 @@ var eventSchema = mongoose.Schema({
   thirdcolor: String,
 
   layout: String,
-  header: String,
+  header: String, 
   twitter: Boolean,
   twittertag: String,
   location: Boolean,
